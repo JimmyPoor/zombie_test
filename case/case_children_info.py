@@ -19,17 +19,18 @@ class ChildrenInfoTest(unittest.TestCase):
 	def setUp(self):
 		self.nextStepApi = Data.urls['nextStepApi']
 		self.childInfoApi = Data.urls['childInfoApi']
-		rs = LoginTest.login_and_read_policy()
+		#
 		#login first
 
 	def tearDown(self):
 		pass;
 
 	def test_edit_child_info_by_id(self):
-
+		rs = LoginTest.login_and_read_policy()
 
 		child = Child()
-		r = rs.post(self.childInfoApi, data=json.dumps(child, default=child2dict))
+		para=json.dumps(child, default=child2dict)
+		r = rs.post(self.childInfoApi, data=para)
 		rj = r.json()['status']
 		msg = r.json()['message']
 		self.assertTrue(rj == "success")

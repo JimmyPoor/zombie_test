@@ -178,9 +178,9 @@
         
     <div class='page-header'>
         <h1>report</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-02-20 13:42:50</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:02.403935</p>
-<p class='attribute'><strong>状态:</strong> 通过 15 失败 1 错误 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-02-20 16:08:19</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:21.883703</p>
+<p class='attribute'><strong>状态:</strong> 通过 21 失败 2</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'></p></div>
@@ -240,36 +240,26 @@
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-    <tr class='errorClass'>
+    <tr class='failClass'>
         <td>case.case_children_info.ChildrenInfoTest</td>
         <td>5</td>
         <td>3</td>
-        <td>1</td>
-        <td>1</td>
+        <td>2</td>
+        <td>0</td>
         <td><a href="javascript:showClassDetail('c2',5)">详情</a></td>
     </tr>
 
 <tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_edit_child_info_by_id</div></td>
+    <td class='failCase'><div class='testcase'>test_edit_child_info_by_id</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        错误</a>
+        失败</a>
     <div id='div_ft2.1' class="popup_window">
         <pre>ft2.1: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_info.py", line 33, in test_edit_child_info_by_id
-    r = requests.post(self.childInfoApi,data=json.dumps(child,cls=ObjectEncoder.ObjectEncoder))
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 238, in dumps
-    **kw).encode(obj)
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 199, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 257, in iterencode
-    return _iterencode(o, 0)
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\util\ObjectEncoder.py", line 28, in default
-    return super(ObjectEncoder, self).default(obj)
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 180, in default
-    o.__class__.__name__)
-TypeError: Object of type 'Child' is not JSON serializable
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_info.py", line 33, in test_edit_child_info_by_id
+    self.assertTrue(rj == "success")
+AssertionError: False is not true
 </pre>
     </div>
     <!--css div popup end-->
@@ -289,7 +279,7 @@ TypeError: Object of type 'Child' is not JSON serializable
         失败</a>
     <div id='div_ft2.3' class="popup_window">
         <pre>ft2.3: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_info.py", line 53, in test_next_step_with_correct_id
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_info.py", line 51, in test_next_step_with_correct_id
     self.assertTrue(rj == "success")
 AssertionError: False is not true
 </pre>
@@ -309,123 +299,207 @@ AssertionError: False is not true
 </tr>
 
     <tr class='passClass'>
+        <td>case.case_login.LoginTest</td>
+        <td>12</td>
+        <td>12</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c3',12)">详情</a></td>
+    </tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_child_login_with_correct_account</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        通过</a>
+    <div id='div_pt3.1' class="popup_window">
+        <pre>pt3.1: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_with_invaild_phone_and_code</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        通过</a>
+    <div id='div_pt3.2' class="popup_window">
+        <pre>pt3.2: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_phone_number_identification</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
+        通过</a>
+    <div id='div_pt3.3' class="popup_window">
+        <pre>pt3.3: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_read_policy_with_correct_param</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.4')" >
+        通过</a>
+    <div id='div_pt3.4' class="popup_window">
+        <pre>pt3.4: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_read_policy_with_invaild_param</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.5')" >
+        通过</a>
+    <div id='div_pt3.5' class="popup_window">
+        <pre>pt3.5: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validation_code</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.6')" >
+        通过</a>
+    <div id='div_pt3.6' class="popup_window">
+        <pre>pt3.6: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_child_login_with_correct_account</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.7')" >
+        通过</a>
+    <div id='div_pt3.7' class="popup_window">
+        <pre>pt3.7: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_with_invaild_phone_and_code</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.8')" >
+        通过</a>
+    <div id='div_pt3.8' class="popup_window">
+        <pre>pt3.8: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_phone_number_identification</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.9')" >
+        通过</a>
+    <div id='div_pt3.9' class="popup_window">
+        <pre>pt3.9: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_read_policy_with_correct_param</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.10')" >
+        通过</a>
+    <div id='div_pt3.10' class="popup_window">
+        <pre>pt3.10: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_read_policy_with_invaild_param</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.11')" >
+        通过</a>
+    <div id='div_pt3.11' class="popup_window">
+        <pre>pt3.11: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validation_code</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.12')" >
+        通过</a>
+    <div id='div_pt3.12' class="popup_window">
+        <pre>pt3.12: 测试用例执行完之后的收尾操作=====
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+    <tr class='passClass'>
         <td>case.case_kindergarten_choose.KindergartenChooseTest</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c3',2)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c4',2)">详情</a></td>
     </tr>
 
-<tr id='pt3.1' class='hiddenRow'>
+<tr id='pt4.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_garten_list</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='pt3.2' class='hiddenRow'>
+<tr id='pt4.2' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_garten_list_by_address_Id</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-    <tr class='passClass'>
-        <td>case.case_login.LoginTest</td>
-        <td>6</td>
-        <td>6</td>
-        <td>0</td>
-        <td>0</td>
-        <td><a href="javascript:showClassDetail('c4',6)">详情</a></td>
-    </tr>
-
-<tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_child_login_with_correct_account</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
-        通过</a>
-    <div id='div_pt4.1' class="popup_window">
-        <pre>pt4.1: 测试用例执行完之后的收尾操作=====
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-<tr id='pt4.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_with_invaild_phone_and_code</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
-        通过</a>
-    <div id='div_pt4.2' class="popup_window">
-        <pre>pt4.2: 测试用例执行完之后的收尾操作=====
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-<tr id='pt4.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_phone_number_identification</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.3')" >
-        通过</a>
-    <div id='div_pt4.3' class="popup_window">
-        <pre>pt4.3: 测试用例执行完之后的收尾操作=====
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-<tr id='pt4.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_read_policy_with_correct_param</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.4')" >
-        通过</a>
-    <div id='div_pt4.4' class="popup_window">
-        <pre>pt4.4: 测试用例执行完之后的收尾操作=====
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-<tr id='pt4.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_read_policy_with_invaild_param</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.5')" >
-        通过</a>
-    <div id='div_pt4.5' class="popup_window">
-        <pre>pt4.5: 测试用例执行完之后的收尾操作=====
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-<tr id='pt4.6' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_validation_code</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.6')" >
-        通过</a>
-    <div id='div_pt4.6' class="popup_window">
-        <pre>pt4.6: 测试用例执行完之后的收尾操作=====
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
         <tr id='total_row'>
             <td>总计</td>
-            <td>17</td>
-            <td>15</td>
-            <td>1</td>
-            <td>1</td>
+            <td>23</td>
+            <td>21</td>
+            <td>2</td>
+            <td>0</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -458,9 +532,9 @@ AssertionError: False is not true
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:15, name:'通过'},
-                        {value:1, name:'失败'},
-                        {value:1, name:'错误'}
+                        {value:21, name:'通过'},
+                        {value:2, name:'失败'},
+                        {value:0, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {

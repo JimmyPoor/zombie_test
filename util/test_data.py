@@ -14,7 +14,7 @@ class Data:
 	codeApi = '/pdyeyzs/pdyeyzs/sms/sendShortMessage'
 	nextStepApi = '/pdyeyzs/pdyeyzs/student/getNext'
 	readPolicyApi='/pdyeyzs/pdyeyzs/policy/readPolicy'
-	childInfoApi = '/pdyeyzs/pdyeyzs/student/selectStudentByFamily'
+	childInfoApi = '/pdyeyzs/pdyeyzs/student/updateStudent'
 
 	def __init__(self) -> None:
 		super().__init__()
@@ -40,25 +40,25 @@ def child2dict(std):
 		:type std: Child
 		"""
 		return {
-			"ID": std.ID,  # 唯一标识 
-			"XM": std.XM,  # 姓名 
-			"CSRQ": std.CSRQ,  # 出生日期 格式yyyymmdd
-			"XB": std.XB,  # 性别 
-			"SFZLX": std.SFZLX,  # 证件类型
-			"SFZJH": std.SFZJH,  # 证件号码 
-			"ZJYXQ": std.ZJYXQ,  # 证件有效期 格式yyyymmdd
-			"JZZLX": std.JZZLX,  # 居住证类型 
-			"JZZHM": std.JZZHM,  # 居住证号码 
-			"JZZYXQ": std.JZZYXQ,  # 居住证有效期格式yyyymmdd
-			"MZ": std.MZ,  # 民族
-			"GJDQ": std.GJDQ,  # 国家地区
-			"JKZK": std.JKZK,  # 健康状况 
-			"HJLB": std.HJLB,  # 户籍类别
-			"FNHKLX": std.FNHKLX,  # 非农户口类型
-			"HKSF": std.HKSF,  # 户口省份 
-			"HKQX": std.HKQX,  # 户口区县 
-			"HKJZ": std.HKJZ,  # 户口街镇 
-			"HKJWH": std.HKJWH  # 户口居委 / 村 
+			"id": std.ID,  # 唯一标识 
+			"xm": std.XM,  # 姓名 
+			"csrq": std.CSRQ,  # 出生日期 格式yyyymmdd
+			"xb": std.XB,  # 性别 
+			# "SFZLX": std.SFZLX,  # 证件类型
+			# "SFZJH": std.SFZJH,  # 证件号码 
+			# "ZJYXQ": std.ZJYXQ,  # 证件有效期 格式yyyymmdd
+			# "JZZLX": std.JZZLX,  # 居住证类型 
+			# "JZZHM": std.JZZHM,  # 居住证号码 
+			# "JZZYXQ": std.JZZYXQ,  # 居住证有效期格式yyyymmdd
+			# "MZ": std.MZ,  # 民族
+			# "GJDQ": std.GJDQ,  # 国家地区
+			# "JKZK": std.JKZK,  # 健康状况 
+			# "HJLB": std.HJLB,  # 户籍类别
+			# "FNHKLX": std.FNHKLX,  # 非农户口类型
+			# "HKSF": std.HKSF,  # 户口省份 
+			# "HKQX": std.HKQX,  # 户口区县 
+			# "HKJZ": std.HKJZ,  # 户口街镇 
+			# "HKJWH": std.HKJWH  # 户口居委 / 村 
 		}
 
 class Child:
@@ -66,15 +66,15 @@ class Child:
 	@classmethod
 	def __init__(self):
 		self.ID = "3"  # 唯一标识 
-		self.XM = "陈xx"  # 姓名 
-		self.CSRQ = "2010-01-01"  # 出生日期 格式yyyymmdd
+		self.XM = "xxx"  # 姓名 
+		self.CSRQ = "20100101"  # 出生日期 格式yyyymmdd
 		self.XB = Enums_XB.男.value  # 性别 
 		self.SFZLX = Enums_SFZJLX.居民身份证.value  # 证件类型
 		self.SFZJH = "310104201512096411"  # 证件号码 
 		self.ZJYXQ = ""  # 证件有效期 格式yyyymmdd
 		self.JZZLX = ""  # 居住证类型 
 		self.JZZHM = ""  # 居住证号码 
-		self.JZZYXQ = "2021-01-01"  # 居住证有效期格式yyyymmdd
+		self.JZZYXQ = "20210101"  # 居住证有效期格式yyyymmdd
 		self.MZ = Enums_MZ.汉族.value  # 民族
 		self.GJDQ = Enums_GJ.中国.value  # 国家地区
 		self.JKZK = Enums_JKZK.一般或较弱.value  # 健康状况 

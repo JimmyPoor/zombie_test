@@ -66,7 +66,7 @@ class LoginTest(unittest.TestCase):
 
 	@classmethod
 	def login_and_read_policy(self):
-		s= requests.session();
+		s= requests.session()
 		r = s.post(Data.urls['loginApi'], data=json.dumps({'mobile': '15871153617', 'code': '88888888'}))
 		m = (r.json()['message'])
 

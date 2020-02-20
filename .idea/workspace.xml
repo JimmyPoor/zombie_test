@@ -2,15 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36e9e5dd-73aa-4b39-b27b-0a21647f3eca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/ObjectEncoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/test_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/case_children_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/case_children_info.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/case_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/case_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/2020-02-19 13_52_17_result.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/2020-02-19 13_54_53_result.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/2020-02-19 14_03_19_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 13_42_49_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 13_44_54_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 13_45_51_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 13_46_29_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_04_59_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_05_59_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_09_19_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_10_11_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_12_29_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_13_50_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_14_59_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_15_38_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_24_26_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_25_18_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_26_29_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_29_03_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_30_26_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_31_44_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_33_36_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_34_23_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_36_55_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_39_26_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_39_50_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_43_23_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_43_47_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_45_31_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_47_34_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_49_58_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_51_50_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_57_29_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 14_58_18_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_05_55_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_07_06_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_08_38_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_11_41_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_12_52_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_14_20_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_15_09_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_16_25_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_16_36_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_16_46_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_17_57_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_18_20_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/2020-02-20 15_21_08_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/ObjectEncoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/ObjectEncoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/test_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/case_children_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state relative-caret-position="243">
+              <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
               <folding>
                 <element signature="e#84#95#0" expanded="true" />
               </folding>
@@ -33,70 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/case_children_garten_review.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/start.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/case_kindergarten_choose.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/util/test_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="25" column="45" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/case_login.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="63" column="27" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/requests/sessions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-969" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/ObjectEncoder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/test_enums.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="54" column="6" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="6" />
+            <state relative-caret-position="240">
+              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -127,16 +106,16 @@
       <list>
         <option value="$PROJECT_DIR$/start.py" />
         <option value="$PROJECT_DIR$/util/test_enums.py" />
-        <option value="$PROJECT_DIR$/util/ObjectEncoder.py" />
-        <option value="$PROJECT_DIR$/util/test_data.py" />
         <option value="$PROJECT_DIR$/case/case_login.py" />
         <option value="$PROJECT_DIR$/case/case_children_info.py" />
+        <option value="$PROJECT_DIR$/util/ObjectEncoder.py" />
+        <option value="$PROJECT_DIR$/util/test_data.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1208" />
-    <option name="y" value="324" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="247" />
+    <option name="y" value="24" />
     <option name="width" value="1770" />
     <option name="height" value="1076" />
   </component>
@@ -146,6 +125,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,15 +147,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../python/pyCharm" />
+    <property name="last_opened_file_path" value="E:/python/pyCharm" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,7 +177,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\project\python\pyCharm\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="D:\software\install\vs2017\Shared\Python36_64\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -231,22 +211,22 @@
       <workItem from="1582010117668" duration="14905000" />
       <workItem from="1582164945746" duration="12814000" />
       <workItem from="1582180750182" duration="2642000" />
+      <workItem from="1582185900640" duration="2084000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30361000" />
+    <option name="totallyTimeSpent" value="32445000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1208" y="324" width="1770" height="1076" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.38853502" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39651415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -254,14 +234,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.072186835" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3148148" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info anchor="right" id="Database" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="5" visible="true" weight="0.28070176" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="5" visible="true" weight="0.2588047" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -291,25 +271,6 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/util/test_data.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/case/case_children_info.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/case/case_children_info.py</url>
-          <line>34</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="Data.urls['loginApi']" />
@@ -322,7 +283,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$start.coverage" NAME="start Coverage Results" MODIFIED="1582183268171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$start.coverage" NAME="start Coverage Results" MODIFIED="1582186896819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/case/__init__.py">
@@ -332,27 +293,42 @@
     <entry file="file://D:/software/install/vs2017/Shared/Python36_64/Lib/unittest/suite.py" />
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/HtmlTestRunner/__init__.py" />
     <entry file="file://D:/software/install/vs2017/Shared/Python36_64/Lib/unittest/case.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/suite.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/suite.py" />
+    <entry file="file://$PROJECT_DIR$/case/case_children_choose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="438">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/requests/sessions.py" />
     <entry file="file://$PROJECT_DIR$/util/test_enums.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
+        <state relative-caret-position="864">
           <caret line="54" column="6" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/case_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/case_kindergarten_choose.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/case/case_children_garten_review.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/start.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="272">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -361,50 +337,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util/ObjectEncoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/case_children_garten_review.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/case_children_choose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/test_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/requests/sessions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-969" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/case_login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="63" column="27" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="128">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="27" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/case_children_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="243">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
           <folding>
             <element signature="e#84#95#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/test_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
         </state>
       </provider>
     </entry>

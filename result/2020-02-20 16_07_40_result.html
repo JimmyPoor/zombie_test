@@ -178,9 +178,9 @@
         
     <div class='page-header'>
         <h1>report</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-02-20 14:15:38</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:14.436451</p>
-<p class='attribute'><strong>状态:</strong> 通过 15 失败 2</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-02-20 16:07:40</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.215019</p>
+<p class='attribute'><strong>状态:</strong> 通过 12 错误 1</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'></p></div>
@@ -240,62 +240,38 @@
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-    <tr class='failClass'>
-        <td>case.case_children_info.ChildrenInfoTest</td>
-        <td>5</td>
-        <td>3</td>
-        <td>2</td>
+    <tr class='errorClass'>
+        <td>unittest.loader._FailedTest</td>
+        <td>1</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c2',5)">详情</a></td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c2',1)">详情</a></td>
     </tr>
 
 <tr id='ft2.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_edit_child_info_by_id</div></td>
+    <td class='errorCase'><div class='testcase'>case_children_info</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        失败</a>
+        错误</a>
     <div id='div_ft2.1' class="popup_window">
-        <pre>ft2.1: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_info.py", line 36, in test_edit_child_info_by_id
-    self.assertTrue(rj == "success")
-AssertionError: False is not true
+        <pre>ft2.1: ImportError: Failed to import test module: case.case_children_info
+Traceback (most recent call last):
+  File "D:\software\install\vs2017\Shared\Python36_64\lib\unittest\loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "D:\software\install\vs2017\Shared\Python36_64\lib\unittest\loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_info.py", line 13, in &lt;module&gt;
+    from util import ObjectEncoder
+  File "E:\projects\Python\test\kindergarten_pudong\util\ObjectEncoder.py", line 10, in &lt;module&gt;
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+
 </pre>
     </div>
     <!--css div popup end-->
     </td>
-</tr>
-
-<tr id='pt2.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_info_confirm</div></td>
-    <td colspan='5' align='center'>通过</td>
-</tr>
-
-<tr id='ft2.3' class='none'>
-    <td class='failCase'><div class='testcase'>test_next_step_with_correct_id</div></td>
-    <td colspan='5' align='center'>
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
-        失败</a>
-    <div id='div_ft2.3' class="popup_window">
-        <pre>ft2.3: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_info.py", line 54, in test_next_step_with_correct_id
-    self.assertTrue(rj == "success")
-AssertionError: False is not true
-</pre>
-    </div>
-    <!--css div popup end-->
-    </td>
-</tr>
-
-<tr id='pt2.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_next_step_with_invalid_id</div></td>
-    <td colspan='5' align='center'>通过</td>
-</tr>
-
-<tr id='pt2.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_parents_fill_edit</div></td>
-    <td colspan='5' align='center'>通过</td>
 </tr>
 
     <tr class='passClass'>
@@ -412,10 +388,10 @@ AssertionError: False is not true
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>17</td>
-            <td>15</td>
-            <td>2</td>
+            <td>13</td>
+            <td>12</td>
             <td>0</td>
+            <td>1</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -448,9 +424,9 @@ AssertionError: False is not true
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:15, name:'通过'},
-                        {value:2, name:'失败'},
-                        {value:0, name:'错误'}
+                        {value:12, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:1, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {

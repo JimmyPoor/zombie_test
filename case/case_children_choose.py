@@ -10,22 +10,10 @@ import unittest
 class ChildrenChooseTest(unittest.TestCase):
 
 	def setUp(self):
-		pass;
+		pass
 
 	def tearDown(self):
 		pass;
-
-	def test_children_list(self):
-		pass;
-
-	def test_children_list_by_parent_id(self):
-		pass;
-
-	def test_children_choose_nobody(self):
-		pass
-
-	def test_children_choose(self):
-		pass
 
 
 if __name__ == '__main__':

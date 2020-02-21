@@ -8,7 +8,6 @@ from util.test_enums import *
 
 
 class Data:
-
 	__host = 'http://10.4.4.5:9999'
 	__loginApi = '/pdyeyzs/pdyeyzs/family/familyLogin'
 	__codeApi = '/pdyeyzs/pdyeyzs/sms/sendShortMessage'
@@ -20,6 +19,15 @@ class Data:
 	__updateParentInfoApi = '/pdyeyzs/pdyeyzs/family/updateFamily'
 	__searchParentsListApi = '/pdyeyzs/pdyeyzs/family/listFamily'
 	__searchSingleParentApi = '/pdyeyzs/pdyeyzs/family/selectFamilyById'
+	__searchKinderGardenByJWAPI='/pdyeyzs/pdyeyzs/school/selectSchoolByJw'
+
+	__childRegistrationAPI='/pdyeyzs/pdyeyzs/student/registration'
+	__gardenPreviewDateListAPI='/pdyeyzs/pdyeyzs/school/listSchoolYYconfig'
+	__currentStepAPI='/pdyeyzs/pdyeyzs/student/next'
+	__previewDateAPI='/pdyeyzs/pdyeyzs/student/addInterview'
+	__childRgistryInfoConfirmAPI='/pdyeyzs/student/confirmation'
+
+	__exportToPDFAPI='pdyeyzs/pdyeyzs/student/exportRegistrationPDF'
 
 	def __init__(self) -> None:
 		super().__init__()
@@ -34,13 +42,93 @@ class Data:
 		'updateParentInfoApi': __host + __updateChildInfoApi,
 		'searchSingleParentApi': __host + __searchSingleParentApi,
 		'searchParentsListApi': __host + __searchParentsListApi,
-		'searchChildListByFamilyIdApi': __host + __searchChildListByFamilyIdApi
+		'searchChildListByFamilyIdApi': __host + __searchChildListByFamilyIdApi,
+		'searchKinderGardenByJW':__host+__searchKinderGardenByJWAPI
 	}
 
 	incorrectTextValues = ['', '#&#+', '99999999999999999999'
 									   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
 
 	numbers = [1, 2, 3, 4, 999, 11111, 55555]
+
+
+def parent2dict(par):
+	"""
+
+	:type par: Parent
+	"""
+	return {
+		"dh": "2"
+		# "zjlx": par.zjlx,
+		# "sfjhr": par.sfjhr,
+		# "cyzj": par.cyzj,
+		# "updateuserid": par.updateuserid,
+		# "zjhm": par.zjhm,
+		# "hjdzjdz": par.hjdzjdz,
+		# "deletedtime": par.deletedtime,
+		# "hks": par.hks,
+		# "deleteduserid": par.deleteduserid,
+		# "jzzyxq": par.jzzyxq,
+		# "id": par.id,
+		# "hjxxdz": par.hjxxdz,
+		# "sfbzf": par.sfbzf,
+		# "jzzhm": par.jzzhm,
+		# "jzzjfsfdb": par.jzzjfsfdb,
+		# "hksf": par.hksf,
+		# "qx": par.qx,
+		# "xb": par.xb,
+		# "studentid": par.studentid,
+		# "gx": par.gx,
+		# "deleted": par.deleted,
+		# "xl": par.xl,
+		# "xm": par.xm,
+		# "gzdw": par.gzdw,
+		# "addtime": par.addtime,
+		# "impno": par.impno,
+		# "jzzlx": par.jzzlx,
+		# "adduserid": par.adduserid,
+		# "updatetime": par.updatetime,
+		# "jydjcs": par.jydjcs,
+		# "hjdzjwhc": par.hjdzjwhc
+
+	}
+
+
+class Parent:
+
+	def __init__(self):
+		self.dh = "123213",
+		# self.zjlx = "1",
+		# self.sfjhr = "1",
+		# self.cyzj = "",
+		# self.updateuserid = "",
+		# self.zjhm = "123123",
+		# self.hjdzjdz = "",  # null,
+		# self.deletedtime = "",  # null,
+		# self.hks = "",  # null,
+		# self.deleteduserid = "",  # null,
+		# self.jzzyxq = "",  # null,
+		# self.id = "1",
+		# self.hjxxdz = "",  # null,
+		# self.sfbzf = "",  # null,
+		# self.jzzhm = "",  # null,
+		# self.jzzjfsfdb = "",
+		# self.hksf = "",  # null,
+		# self.qx = "",  # null,
+		# self.xb = "1",
+		# self.studentid = "1",
+		# self.gx = "1",
+		# self.deleted = "0",
+		# self.xl = "",  # null,
+		# self.xm = "xiaohuihui",
+		# self.gzdw = "",  # null,
+		# self.addtime = "1",
+		# self.impno = "",  # null,
+		# self.jzzlx = "",  # null,
+		# self.adduserid = "1",
+		# self.updatetime = "",  # null,
+		# self.jydjcs = "",  # null,
+		# self.hjdzjwhc = "",  # null
 
 
 def child2dict(std):

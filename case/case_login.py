@@ -3,7 +3,7 @@ import unittest
 import requests
 import time
 
-from util.login import Parent_login
+from util.login import  Login
 from util.test_data import Data
 
 
@@ -41,7 +41,8 @@ class LoginTest(unittest.TestCase):
 		pass;
 
 	def test_read_policy_with_invaild_param(self):
-		Parent_login()
+		Login.Parent_login()
+
 		for i in Data.incorrectTextValues:
 			r = requests.post(Data.urls['readPolicyApi'], data=json.dumps({'id': i, 'type': i}, ))
 			rj = (r.json()['status'])

@@ -4,14 +4,11 @@
 @Date:Crate in 10:45 2020/1/21
 @Modified by:
 """
+
 import json
 import unittest
 
-import requests
-
-from case.case_login import LoginTest
-from util import ObjectEncoder
-from util.login import Parent_login
+from util.login import Login
 from util.test_data import Data, Child, child2dict
 
 
@@ -22,7 +19,7 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.editChildInfoApi = Data.urls['updateChildInfoApi']
 		self.searchChildInfoApi = Data.urls['searchChildInfoApi']
 		# login and see policy first
-		self.rs = Parent_login()
+		self.rs = Login.Parent_login()
 		self.ids = [1, 3, 4]
 
 	def tearDown(self):
@@ -42,16 +39,16 @@ class ChildrenInfoTest(unittest.TestCase):
 	def test_get_child_info_by_correct_id(self):
 		r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': self.ids[1]}))
 		rj = r.json()['status']
-		self.assertTrue(rj == 'error')
+		self.assertTrue(rj == 'success')
 
 	def test_edit_child_info_by_id(self):
-		child = Child()
-		para = json.dumps(child, default=child2dict)
-		r = self.rs.post(self.editChildInfoApi, data=para)
-		rj = r.json()['status']
-		msg = r.json()['message']
-		self.assertTrue(rj == "success")
-		pass;
+			child = Child()
+			para = json.dumps(child, default=child2dict)
+			r = self.rs.post(self.editChildInfoApi, data=para)
+			rj = r.json()['status']
+			msg = r.json()['message']
+			self.assertTrue(rj == "success")
+			pass;
 
 	def test_and_record_crrent_step_no(self):
 		pass

@@ -13,17 +13,23 @@ import time
 from util.test_data import Data
 
 
-def Parent_login():
-	s = requests.session()
-	r = s.post(Data.urls['loginApi'], data=json.dumps({'mobile': '15871153617', 'code': '88888888'}))
-	m = (r.json()['message'])
+class Login():
 
-	r = s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '1'}, ))
-	m2 = (r.json()['message'])
+	s = None
 
-	time.sleep(3)
+	@staticmethod
+	def Parent_login():
+		if (Login.s is None):
+			Login.s = requests.session()
+			r = Login.s.post(Data.urls['loginApi'], data=json.dumps({'mobile': '15871153617', 'code': '88888888'}))
+			m = (r.json()['message'])
 
-	r = s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '2'}, ))
-	m3 = (r.json()['message'])
+			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '1'}, ))
+			m2 = (r.json()['message'])
 
-	return s;
+			time.sleep(3)
+
+			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '2'}, ))
+			m3 = (r.json()['message'])
+
+		return Login.s

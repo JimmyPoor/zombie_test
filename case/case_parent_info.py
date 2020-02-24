@@ -21,7 +21,7 @@ class ParentInfoTest(unittest.TestCase):
 		self.editParentInfoApi = Data.urls['updateParentInfoApi']
 		self.rs = Login.Parent_login()  # parent login and read policy first
 		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId, self.rs)  # check current child is confirmed or not
-		self.currentParent = Data.getParentById(Data.currentParentId, self.rs)
+		self.currentParent = Data.get_parent_by_id(Data.currentParentId, self.rs)
 
 	def tearDown(self):
 		pass;
@@ -40,7 +40,7 @@ class ParentInfoTest(unittest.TestCase):
 		self.assertTrue(rj == 'error', msg=m)
 		pass
 
-	def test_search_parnet_list_by_invalid_child_Id(self):
+	def test_search_parent_list_by_invalid_child_Id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.searchParentsListApi, data=json.dumps({'studentid': i}))
 			rj = r.json()['status']
@@ -48,7 +48,7 @@ class ParentInfoTest(unittest.TestCase):
 			self.assertTrue(rj == 'error', msg=m)
 		pass
 
-	def test_serach_parent_list_by_correct_child_id(self):
+	def test_search_parent_list_by_correct_child_id(self):
 		r = self.rs.post(self.searchParentsListApi, data=json.dumps({'studentid': Data.currentChildId}))
 		rj = r.json()['status']
 		m = r.json()['message']
@@ -56,10 +56,8 @@ class ParentInfoTest(unittest.TestCase):
 		pass
 
 	def test_edit_parent_info(self):
-		# todo: parnet= self.currentParent
-		parent = Parent()
-		para = json.dumps(parent, default=parent2dict)
-		r = self.rs.post(self.editParentInfoApi, data=para)
+		json_str = Data.dic_to_json_string(self.currentParent)
+		r = self.rs.post(self.editParentInfoApi, data=json_str)
 		rj = r.json()['status']
 		m = r.json()['message']
 

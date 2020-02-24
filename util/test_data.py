@@ -27,7 +27,7 @@ class Data:
 	__gardenInterviewDateListAPI = '/pdyeyzs/pdyeyzs/school/listSchoolYYconfig'
 	__currentStepAPI = '/pdyeyzs/pdyeyzs/student/next'
 	__addInterviewDateAPI = '/pdyeyzs/pdyeyzs/student/addInterview'
-	__childRgistryInfoConfirmAPI = '/pdyeyzs/student/confirmation'
+	__childRegistryInfoConfirmAPI = '/pdyeyzs/student/confirmation'
 	__exportToPDFAPI = 'pdyeyzs/pdyeyzs/student/exportRegistrationPDF'
 
 	def __init__(self) -> None:
@@ -49,7 +49,7 @@ class Data:
 		'gardenInterviewDateListAPI': __host + __gardenInterviewDateListAPI,
 		'currentStepAPI': __host + __currentStepAPI,
 		'addInterviewDateAPI': __host + __addInterviewDateAPI,
-		'childRgistryInfoConfirmAPI': __host + __childRgistryInfoConfirmAPI,
+		'childRgistryInfoConfirmAPI': __host + __childRegistryInfoConfirmAPI,
 		'exportToPDFAPI': __host + __exportToPDFAPI
 	}
 
@@ -67,14 +67,23 @@ class Data:
 	currentLoginMobile = '15618528215'
 	currentCode = '88888888'
 	currentChild = None
+	currentParent = None
 
 	@staticmethod
-	def getChildById(childId, session):
-		if(Data.currentChild is None):
-			r = session.post(Data.urls['searchChildInfoApi'], data=json.dumps({'id': Data.currentChildId}))
-			Data.currentChild = json.dumps(r.json()['data'],ensure_ascii=False)
-		return Data.currentChild.encode('utf-8') # fix chinese char issue
+	def get_child_by_id(childId, session):
+		if Data.currentChild is None:
+			r = session.post(Data.urls['searchChildInfoApi'], data=json.dumps({'id': childId}))
+			Data.currentChild =r.json()['data']
+		return Data.currentChild
 
 	@staticmethod
-	def getParentById(parentId, session):
-		return None
+	def get_parent_by_id(parentId, session):
+		if Data.currentParent is None:
+			r = session.post(Data.urls['searchSingleParentApi'], data=json.dumps({'id': parentId}))
+			Data.currentParent = r.json()['data']
+		return Data.currentParent
+
+	@staticmethod
+	def dic_to_json_string(dic):
+		return json.dumps(dic, ensure_ascii=False).encode('utf-8') # fix chinese char issue
+

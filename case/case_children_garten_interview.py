@@ -22,7 +22,7 @@ class KindergartenInterviewTest(unittest.TestCase):
 
 		self.rs=Login.Parent_login() # login first
 		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId,self.rs)  # check current child is confirmed or not
-		self.currentChild = Data.getChildById(Data.currentChildId,self.rs)
+		self.currentChild = Data.get_child_by_id(Data.currentChildId,self.rs)
 
 	def tearDown(self):
 		pass;
@@ -65,7 +65,6 @@ class KindergartenInterviewTest(unittest.TestCase):
 		self.assertTrue(rj == 'success', msg=m)
 		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenInterview'])
 
-
 	def test_child_registration_confirm_by_invalid_id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.childRgistryInfoConfirmAPI, data=json.dumps({'id': i}))
@@ -74,7 +73,12 @@ class KindergartenInterviewTest(unittest.TestCase):
 			self.assertTrue(rj == 'error', msg=m)
 
 	def test_child_registration_confirm_by_correct_child_id(self):
+		r = self.rs.post(self.childRgistryInfoConfirmAPI, data=json.dumps({'id': Data.currentChild}))
+		rj = r.json()['status']
+		m = r.json()['message']
+		self.assertTrue(rj == 'success', msg=m)
 		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenConfirm'])
+
 		pass
 
 

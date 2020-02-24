@@ -17,10 +17,8 @@ class KindergartenChooseTest(unittest.TestCase):
 	def setUp(self):
 		self.searchKinderGardenByJWApi = Data.urls['searchKinderGardenByJWApi']
 		self.typeids = ['1', '2']  # 1按户籍地分配对口园, 2按居住地分配对口园(可选参数)"
-
 		self.rs = Login.Parent_login()  # login first
-		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId,
-												  self.rs)  # check current child is confirmed or not
+		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId,self.rs)  # check current child is confirmed or not
 		self.currentChild=Data.getChildById(Data.currentChildId,self.rs)
 
 	def tearDown(self):
@@ -56,7 +54,7 @@ class KindergartenChooseTest(unittest.TestCase):
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj, 'error')
-
+		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenEdit'])
 
 if __name__ == '__main__':
 	unittest.main()

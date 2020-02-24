@@ -23,7 +23,7 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.searchChildListApi = Data.urls['searchChildListByFamilyIdApi']
 		self.rs = Login.Parent_login()  # login and see policy first
 		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId, self.rs) 	# check current child is confirmed or not
-		self.currentChild=Data.getChildById(Data.currentChildId,self.rs) # search current user
+		self.currentChild=Data.get_child_by_id(Data.currentChildId,self.rs) # search current user
 
 	def tearDown(self):
 		pass;
@@ -55,7 +55,8 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.assertTrue(rj == 'success', msg=m)
 
 	def test_edit_child_info_by_id(self):
-		r = self.rs.post(self.editChildInfoApi, data=self.currentChild)
+		json_str=Data.dic_to_json_string(self.currentChild)
+		r = self.rs.post(self.editChildInfoApi, data=json_str)
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == "success", msg=m)

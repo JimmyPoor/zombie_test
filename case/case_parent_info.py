@@ -7,8 +7,10 @@
 import json
 import unittest
 
-from util.login import Login
-from util.test_data import Data, Parent, parent2dict
+from util.test_business import Login
+from util.test_business import StepAndConfirm
+from util.test_data import Data
+from util.test_models import Parent, parent2dict
 
 
 class ParentInfoTest(unittest.TestCase):
@@ -17,9 +19,9 @@ class ParentInfoTest(unittest.TestCase):
 		self.searchParentsListApi = Data.urls['searchParentsListApi']
 		self.searchSingleParentApi = Data.urls['searchSingleParentApi']
 		self.editParentInfoApi = Data.urls['updateParentInfoApi']
-		# parent login and read policy first
-		self.rs = Login.Parent_login()
-		self.ids = [1, 3, 4]
+		self.rs = Login.Parent_login()  # parent login and read policy first
+		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId, self.rs)  # check current child is confirmed or not
+		self.currentParent = Data.getParentById(Data.currentParentId, self.rs)
 
 	def tearDown(self):
 		pass;
@@ -28,36 +30,43 @@ class ParentInfoTest(unittest.TestCase):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.searchSingleParentApi, data=json.dumps({'id': i}))
 			rj = r.json()['status']
-			self.assertTrue(rj == 'error')
+			m = r.json()['message']
+			self.assertTrue(rj == 'error', msg=m)
 
 	def test_search_single_parent_by_correct_id(self):
-		r = self.rs.post(self.searchSingleParentApi, data=json.dumps({'id': self.ids[1]}))
+		r = self.rs.post(self.searchSingleParentApi, data=json.dumps({'id': Data.currentParentId}))
 		rj = r.json()['status']
-		self.assertTrue(rj == 'error')
+		m = r.json()['message']
+		self.assertTrue(rj == 'error', msg=m)
 		pass
 
 	def test_search_parnet_list_by_invalid_child_Id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.searchParentsListApi, data=json.dumps({'studentid': i}))
 			rj = r.json()['status']
-			self.assertTrue(rj == 'error')
+			m = r.json()['message']
+			self.assertTrue(rj == 'error', msg=m)
 		pass
 
 	def test_serach_parent_list_by_correct_child_id(self):
-		r = self.rs.post(self.searchParentsListApi, data=json.dumps({'studentid': self.ids[1]}))
+		r = self.rs.post(self.searchParentsListApi, data=json.dumps({'studentid': Data.currentChildId}))
 		rj = r.json()['status']
-		self.assertTrue(rj == 'success')
+		m = r.json()['message']
+		self.assertTrue(rj == 'success', msg=m)
 		pass
 
 	def test_edit_parent_info(self):
+		# todo: parnet= self.currentParent
 		parent = Parent()
 		para = json.dumps(parent, default=parent2dict)
 		r = self.rs.post(self.editParentInfoApi, data=para)
 		rj = r.json()['status']
-		m=r.json()['message']
-		self.assertTrue(rj == "success")
-		pass;
+		m = r.json()['message']
 
+		self.assertTrue(rj == "success", msg=m)
+		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenEdit'])
+
+		pass;
 
 # if __name__ == '__main__':
 # 	unittest.main()

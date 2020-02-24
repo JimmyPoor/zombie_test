@@ -1,11 +1,12 @@
 #! /usr/bin/env python  
 # -*- coding:utf-8 -*-  
 # ====#====#====#====
-# __author__ = "Huachao"  
-# HomePage:http://blog.csdn.net/jacson_bai
-# FileName: *.py
+# __author__ = "Huachao"
+# FileName: text_business.py
 # Version:1.0.0
 # ====#====#====#====
+
+
 import json
 import requests
 import time
@@ -14,7 +15,6 @@ from util.test_data import Data
 
 
 class Login():
-
 	s = None
 
 	@staticmethod
@@ -33,3 +33,13 @@ class Login():
 			m3 = (r.json()['message'])
 
 		return Login.s
+
+
+class StepAndConfirm():
+
+	def __init__(self):
+		pass
+
+	@staticmethod
+	def isConfirm(childId, session):
+		return False

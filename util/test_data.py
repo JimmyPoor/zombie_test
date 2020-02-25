@@ -22,13 +22,13 @@ class Data:
 	__searchParentsListApi = '/pdyeyzs/pdyeyzs/family/listFamily'
 	__searchSingleParentApi = '/pdyeyzs/pdyeyzs/family/selectFamilyById'
 
-	__searchKinderGardenByJWAPI = '/pdyeyzs/pdyeyzs/school/selectSchoolByJw'
-	__childRegistrationAPI = '/pdyeyzs/pdyeyzs/student/registration'
-	__gardenInterviewDateListAPI = '/pdyeyzs/pdyeyzs/school/listSchoolYYconfig'
-	__currentStepAPI = '/pdyeyzs/pdyeyzs/student/next'
-	__addInterviewDateAPI = '/pdyeyzs/pdyeyzs/student/addInterview'
-	__childRegistryInfoConfirmAPI = '/pdyeyzs/student/confirmation'
-	__exportToPDFAPI = 'pdyeyzs/pdyeyzs/student/exportRegistrationPDF'
+	__searchKinderGardenByJWApi = '/pdyeyzs/pdyeyzs/school/selectSchoolByJw'
+	__childRegistrationApi = '/pdyeyzs/pdyeyzs/student/registration'
+	__gardenInterviewDateListApi = '/pdyeyzs/pdyeyzs/school/listSchoolYYconfig'
+	__currentStepApi = '/pdyeyzs/pdyeyzs/student/next'
+	__addInterviewDateApi = '/pdyeyzs/pdyeyzs/student/addInterview'
+	__childRegistryInfoConfirmApi = '/pdyeyzs/pdyeyzs/student/confirmation'
+	__exportToPDFApi = 'pdyeyzs/pdyeyzs/student/exportRegistrationPDF'
 
 	def __init__(self) -> None:
 		super().__init__()
@@ -44,27 +44,28 @@ class Data:
 		'searchSingleParentApi': __host + __searchSingleParentApi,
 		'searchParentsListApi': __host + __searchParentsListApi,
 		'searchChildListByFamilyIdApi': __host + __searchChildListByFamilyIdApi,
-		'searchKinderGardenByJWApi': __host + __searchKinderGardenByJWAPI,
-		'childRegistrationAPI': __host + __childRegistrationAPI,
-		'gardenInterviewDateListAPI': __host + __gardenInterviewDateListAPI,
-		'currentStepAPI': __host + __currentStepAPI,
-		'addInterviewDateAPI': __host + __addInterviewDateAPI,
-		'childRgistryInfoConfirmAPI': __host + __childRegistryInfoConfirmAPI,
-		'exportToPDFAPI': __host + __exportToPDFAPI
+		'searchKinderGardenByJWApi': __host + __searchKinderGardenByJWApi,
+		'childRegistrationApi': __host + __childRegistrationApi,
+		'gardenInterviewDateListApi': __host + __gardenInterviewDateListApi,
+		'currentStepApi': __host + __currentStepApi,
+		'addInterviewDateApi': __host + __addInterviewDateApi,
+		'childRgistryInfoConfirmApi': __host + __childRegistryInfoConfirmApi,
+		'exportToPDFApi': __host + __exportToPDFApi
 	}
 
 	incorrectTextValues = ['', r'/[`~!@#$%^&*()_+<>?:"{},.\/;', r'/[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im',
-						   '99999999999999999999',
-						   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
+						   'aaaaaaaaaaaaaaaaaaa888787878fgfgffgtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
 	numbers = [1, 2, 3, 4, 999, 11111, 55555]
 	messages = {'forbiddenEdit': 'can not edit after info has been confirmed',
 				'forbiddenInterview': 'can not add interview due to child info has been confirmed',
-				'forbiddenConfirm': 'can not confirm due to this child hass been confirmed'
+				'forbiddenRegistration': "this child has been registered",
+				'forbiddenConfirm': ' child info hass been confirmed'
 				}
 
+	currentGartenId = '1'
 	currentChildId = '3'
 	currentParentId = '1'
-	currentLoginMobile = '15618528215'
+	currentLoginMobile = '15871153617'
 	currentCode = '88888888'
 	currentChild = None
 	currentParent = None
@@ -73,7 +74,7 @@ class Data:
 	def get_child_by_id(childId, session):
 		if Data.currentChild is None:
 			r = session.post(Data.urls['searchChildInfoApi'], data=json.dumps({'id': childId}))
-			Data.currentChild =r.json()['data']
+			Data.currentChild = r.json()['data']
 		return Data.currentChild
 
 	@staticmethod
@@ -85,5 +86,18 @@ class Data:
 
 	@staticmethod
 	def dic_to_json_string(dic):
-		return json.dumps(dic, ensure_ascii=False).encode('utf-8') # fix chinese char issue
+		return json.dumps(dic, ensure_ascii=False).encode('utf-8')  # fix chinese char issue
 
+	@staticmethod
+	def get_garten_type(childId, sessoin):
+		child=None
+		if(Data.currentChild is None):
+			child = Data.get_child_by_id(childId, sessoin)
+		else:
+			child= Data.currentChild
+
+		hkIsInShangehai=True
+		if hkIsInShangehai:
+			return '1'
+		else:
+			return '2'

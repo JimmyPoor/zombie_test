@@ -16,13 +16,14 @@ from util.test_models import Child, child2dict
 
 class ChildrenInfoTest(unittest.TestCase):
 
-	def setUp(self):
+	@classmethod
+	def setUpClass(self):
 		self.nextStepApi = Data.urls['nextStepApi']
 		self.editChildInfoApi = Data.urls['updateChildInfoApi']
 		self.searchChildInfoApi = Data.urls['searchChildInfoApi']
 		self.searchChildListApi = Data.urls['searchChildListByFamilyIdApi']
-		self.rs = Login.Parent_login()  # login and see policy first
-		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId, self.rs) 	# check current child is confirmed or not
+		self.rs = Login.parent_login()  # login and see policy first
+		self.isConfirm = StepAndConfirm.is_confirm(Data.currentChildId, self.rs) 	# check current child is confirmed or not
 		self.currentChild=Data.get_child_by_id(Data.currentChildId,self.rs) # search current user
 
 	def tearDown(self):
@@ -62,10 +63,24 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.assertTrue(rj == "success", msg=m)
 		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenEdit'])
 
-		pass;
+
+	def test_edit_child_info_step_1(self):
+		pass
+
+	def test_edit_child_info_step_2(self):
+		pass
+
+	def test_edit_child_info_step_3(self):
+		pass
+
+	def test_edit_child_info_step_4(self):
+		pass
+
+
 
 	def test_and_record_crrent_step_no(self):
 		pass
+
 
 	def test_next_step_with_invalid_id(self):
 		for i in Data.incorrectTextValues:
@@ -73,6 +88,7 @@ class ChildrenInfoTest(unittest.TestCase):
 			rj = r.json()['status']
 			m = r.json()['message']
 			self.assertTrue(rj == "error", msg=m)
+
 
 	def test_next_step_with_correct_id(self):
 		#xsid=self.currentChild['xsid']

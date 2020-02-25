@@ -14,44 +14,46 @@ from util.test_data import Data
 
 class KindergartenInterviewTest(unittest.TestCase):
 
-	def setUp(self):
-		self.gardenInterviewDateListAPI = Data.urls['gardenInterviewDateListAPI']
-		self.childRgistryInfoConfirmAPI = Data.urls['childRgistryInfoConfirmAPI']
-		self.addInterviewDateAPI = Data.urls['addInterviewDateAPI']
-		self.childRgistryInfoConfirmAPI = Data.urls['childRgistryInfoConfirmAPI']
+	@classmethod
+	def setUpClass(self):
+		self.gardenInterviewDateListApi = Data.urls['gardenInterviewDateListApi']
+		self.childRgistryInfoConfirmApi = Data.urls['childRgistryInfoConfirmApi']
+		self.addInterviewDateApi = Data.urls['addInterviewDateApi']
+		self.childRgistryInfoConfirmApi = Data.urls['childRgistryInfoConfirmApi']
+		self.rs = Login.parent_login()  # login first
+		self.isConfirm = StepAndConfirm.is_confirm(Data.currentChildId,self.rs)  # check current child is confirmed or not
+		self.isRegistered = StepAndConfirm.is_registered(Data.currentChildId, self.rs)
+		self.currentChild = Data.get_child_by_id(Data.currentChildId, self.rs)
 
-		self.rs=Login.Parent_login() # login first
-		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId,self.rs)  # check current child is confirmed or not
-		self.currentChild = Data.get_child_by_id(Data.currentChildId,self.rs)
+	def setUp(self):
+		pass
 
 	def tearDown(self):
-		pass;
+		pass
 
 	def test_garten_interview_date_list_by_invalid_child_id(self):
 		for i in Data.incorrectTextValues:
-			r = self.rs.post(self.gardenInterviewDateListAPI, data=json.dumps({'id': i}))
+			r = self.rs.post(self.gardenInterviewDateListApi, data=json.dumps({'id': i}))
 			rj = r.json()['status']
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
 
 	def test_garten_interview_date_list_by_correct_child_id(self):
-		r = self.rs.post(self.gardenInterviewDateListAPI, data=json.dumps({'id': Data.currentChildId}))
+		r = self.rs.post(self.gardenInterviewDateListApi, data=json.dumps({'id': Data.currentChildId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
 
-	# TODO:self.assertTrue(property is all same )
-
 	def test_add_interview_date_by_invalid_id(self):
 		for i in Data.incorrectTextValues:
-			r = self.rs.post(self.addInterviewDateAPI, data=json.dumps({'id': i}))
+			r = self.rs.post(self.addInterviewDateApi, data=json.dumps({'id': i}))
 			rj = r.json()['status']
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
 
 	def test_add_interview_date_by_invalid_yysjid(self):
 		for i in Data.incorrectTextValues:
-			r = self.rs.post(self.addInterviewDateAPI, data=json.dumps({'id': Data.currentChildId, 'yysjid': i}))
+			r = self.rs.post(self.addInterviewDateApi, data=json.dumps({'id': Data.currentChildId, 'yysjid': i}))
 			rj = r.json()['status']
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
@@ -59,7 +61,7 @@ class KindergartenInterviewTest(unittest.TestCase):
 	def test_add_interview_data_by_correct_parmas(self):
 		# TODO: get randmon yysjid(预约时间项id) first and try request by this yysjid
 		# yysjid=self.currentChild.yysjid
-		r = self.rs.post(self.addInterviewDateAPI, data=json.dumps({'id': Data.currentChildId, 'yysjid': "1"}))
+		r = self.rs.post(self.addInterviewDateApi, data=json.dumps({'id': Data.currentChildId, 'yysjid': "1"}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
@@ -67,19 +69,18 @@ class KindergartenInterviewTest(unittest.TestCase):
 
 	def test_child_registration_confirm_by_invalid_id(self):
 		for i in Data.incorrectTextValues:
-			r = self.rs.post(self.childRgistryInfoConfirmAPI, data=json.dumps({'id': i}))
+			r = self.rs.post(self.childRgistryInfoConfirmApi, data=json.dumps({'id': i}))
 			rj = r.json()['status']
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
 
 	def test_child_registration_confirm_by_correct_child_id(self):
-		r = self.rs.post(self.childRgistryInfoConfirmAPI, data=json.dumps({'id': Data.currentChild}))
+		r = self.rs.post(self.childRgistryInfoConfirmApi, data=json.dumps({'id': Data.currentChildId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
-		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenConfirm'])
-
-		pass
+		self.assertFalse(self.isRegistered, msg=Data.messages['forbiddenRegistration'])  # child must been registered
+		self.assertFalse(self.isConfirm, msg=Data.messages['forbiddenEdit'])  # child cannot been confirmed
 
 
 if __name__ == '__main__':

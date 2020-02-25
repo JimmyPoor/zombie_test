@@ -18,7 +18,7 @@ class Login():
 	s = None
 
 	@staticmethod
-	def Parent_login():
+	def parent_login():
 		if (Login.s is None):
 			Login.s = requests.session()
 			r = Login.s.post(Data.urls['loginApi'], data=json.dumps({'mobile': '15871153617', 'code': '88888888'}))
@@ -34,6 +34,10 @@ class Login():
 
 		return Login.s
 
+	@staticmethod
+	def is_login():
+		return Login.s is not None
+
 
 class StepAndConfirm():
 
@@ -41,5 +45,15 @@ class StepAndConfirm():
 		pass
 
 	@staticmethod
-	def isConfirm(childId, session):
+	def is_confirm(childId, session):
 		return False
+
+	@staticmethod
+	def is_registered(childId, session):
+		result = False;
+		gartenId = None;
+		return result is True and gartenId is not None
+
+	@staticmethod
+	def is_hkInShangehai(childId, session):
+		return True

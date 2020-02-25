@@ -15,12 +15,13 @@ from util.test_models import Parent, parent2dict
 
 class ParentInfoTest(unittest.TestCase):
 
-	def setUp(self):
+	@classmethod
+	def setUpClass(self):
 		self.searchParentsListApi = Data.urls['searchParentsListApi']
 		self.searchSingleParentApi = Data.urls['searchSingleParentApi']
 		self.editParentInfoApi = Data.urls['updateParentInfoApi']
-		self.rs = Login.Parent_login()  # parent login and read policy first
-		self.isConfirm = StepAndConfirm.isConfirm(Data.currentChildId, self.rs)  # check current child is confirmed or not
+		self.rs = Login.parent_login()  # parent login and read policy first
+		self.isConfirm = StepAndConfirm.is_confirm(Data.currentChildId, self.rs)  # check current child is confirmed or not
 		self.currentParent = Data.get_parent_by_id(Data.currentParentId, self.rs)
 
 	def tearDown(self):
@@ -37,7 +38,7 @@ class ParentInfoTest(unittest.TestCase):
 		r = self.rs.post(self.searchSingleParentApi, data=json.dumps({'id': Data.currentParentId}))
 		rj = r.json()['status']
 		m = r.json()['message']
-		self.assertTrue(rj == 'error', msg=m)
+		self.assertTrue(rj == 'success', msg=m)
 		pass
 
 	def test_search_parent_list_by_invalid_child_Id(self):

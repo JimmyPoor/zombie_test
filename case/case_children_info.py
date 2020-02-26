@@ -8,7 +8,7 @@
 import json
 import unittest
 
-from util.test_business import Login, MockDataFactory
+from util.test_business import Login, Util
 from util.test_business import StepAndConfirm
 from util.test_data import Data
 from util.test_models import Child, child2dict
@@ -23,14 +23,13 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.searchChildInfoApi = Data.urls['searchChildInfoApi']
 		self.searchChildListApi = Data.urls['searchChildListByFamilyIdApi']
 		self.rs = Login.parent_login()  # login and see policy first
-		self.isConfirm = StepAndConfirm.is_confirm(Data.currentChildId,
-												   self.rs)  # check current child is confirmed or not
 		self.currentChild = Data.get_child_by_id(Data.currentChildId, self.rs)  # search current user
+		self.isConfirm = StepAndConfirm.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def tearDown(self):
 		pass;
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_get_child_list_by_invalid_family_id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.searchChildListApi, data=json.dumps({'familyUserid': i}))
@@ -38,14 +37,14 @@ class ChildrenInfoTest(unittest.TestCase):
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_get_child_list_by_correct_family_id(self):
 		r = self.rs.post(self.searchChildListApi, data=json.dumps({'familyUserid': Data.currentParentId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_get_child_info_by_invalid_id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': i}))
@@ -53,50 +52,43 @@ class ChildrenInfoTest(unittest.TestCase):
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_get_child_info_by_correct_id(self):
 		r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
 
-	# @unittest.skip('todo')
-	# def test_edit_child_info_by_invalid_params(self):
-	# 	dic=MockDataFactory.create_child_validate_data(self.editChildInfoApi,self.currentChild,self.rs)
-	# 	for k,v in dic:
-	# 		self.assertTrue(v.rj == 'success', msg=v.msg)
 
-	# @unittest.skip('todo')
-	# def test_edit_child_info_by_corrent_params(self):
-	# 	json_str = Data.dic_to_json_string(self.currentChild)
-	# 	r = self.rs.post(self.editChildInfoApi, data=json_str)
-	# 	rj = r.json()['status']
-	# 	m = r.json()['message']
-	# 	self.assertTrue(rj == "success", msg=m)
-	# 	self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenEdit'])
+	@unittest.skip('todo')
+	def test_edit_child_info_step_1_with_invalid_param(self):
+		dic = Util.set_object_data_with_each_field_and_post(self.editChildInfoApi, Data.child_step1_fields, self.rs)
+		for k, v in dic:
+			self.assertTrue(v.rj == "error", msg=v.msg)
 
-	#@unittest.skip('todo')
-	def test_edit_child_info_step_1_with_invalid_logic_data(self):
-		dic = {'id': Data.currentChildId}
-		for i in Data.incorrectTextValues:
-			dic['xm'] = i
-			dic['xmpy'] = i
-			dic['cym'] = i
-			dic['csrq'] = Data.invalidDateList[0]
-			dic['xb'] = i
-			dic['mz'] = i
-			#dic['zjlx'] = i
-			dic['sfzlx'] = i
-			dic['sfzjh'] = i
-			dic['gjdq'] = i
-			dic['jg'] = i
-			dic['gatqw'] = i
-			dic['wjsflb'] = i
-			jsonStr = Data.dic_to_json_string(dic)
-			r = self.rs.post(self.editChildInfoApi, data=jsonStr)
-			rj = r.json()['status']
-			m = r.json()['message']
-			self.assertTrue(rj == "error", msg=m)
+	def test_edit_child_info_step_1_with_logic_issue_param(self):
+		pass
+
+	def test_edit_child_info_step_1_with_correct_param(self):
+		pass
+
+
+	# for i in Data.incorrectTextValues:
+	# 	dic['xm'] = i
+	# 	dic['xmpy'] = i
+	# 	dic['cym'] = i
+	# 	dic['csrq'] = Data.invalidDateList[0]
+	# 	dic['xb'] = i
+	# 	dic['mz'] = i
+	# 	# dic['zjlx'] = i
+	# 	dic['sfzlx'] = i
+	# 	dic['sfzjh'] = i
+	# 	dic['gjdq'] = i
+	# 	dic['jg'] = i
+	# 	dic['gatqw'] = i
+	# 	dic['wjsflb'] = i
+	# 	MockDataFactory.create_child_data_and_post(self.editChildInfoApi, dic, self.rs)
+	# 	self.assertTrue(rj == "error", msg=m)
 
 	#
 	# @unittest.skip('todo')

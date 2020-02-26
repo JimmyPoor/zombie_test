@@ -20,9 +20,9 @@ class ParentInfoTest(unittest.TestCase):
 		self.searchParentsListApi = Data.urls['searchParentsListApi']
 		self.searchSingleParentApi = Data.urls['searchSingleParentApi']
 		self.editParentInfoApi = Data.urls['updateParentInfoApi']
-		self.rs = Login.parent_login()  # parent login and read policy first
-		self.isConfirm = StepAndConfirm.is_confirm(Data.currentChildId, self.rs)  # check current child is confirmed or not
-		self.currentParent = self.test_search_single_parent_by_correct_id(self)
+		self.rs = Login.parent_login(isforce=True)  # parent login and read policy first
+		self.currentParent = Data.get_parent_by_id(Data.currentParentId,self.rs)
+		self.isConfirm = StepAndConfirm.is_confirm(self.currentParent, self.rs)  # check current child is confirmed or not
 
 	def tearDown(self):
 		pass;

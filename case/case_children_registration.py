@@ -19,11 +19,11 @@ class ChildRegistrationTest(unittest.TestCase):
 		self.searchKinderGardenByJWApi = Data.urls['searchKinderGardenByJWApi']
 		self.childRegistrationAPI = Data.urls['childRegistrationApi']
 		self.rs = Login.parent_login()  # login first
-		self.isConfirm = StepAndConfirm.is_confirm(Data.currentChildId,self.rs)  # check current child is confirmed or not
 		self.isRegistered = StepAndConfirm.is_registered(Data.currentChildId, self.rs)
 		self.currentChild = Data.get_child_by_id(Data.currentChildId, self.rs)
 		# 1按户籍地分配对口园, 2按居住地分配对口园(可选参数)"
 		self.gartenTypeId= Data.get_garten_type(Data.currentChildId, self.rs)
+		self.isConfirm = StepAndConfirm.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def setUp(self):
 		pass;

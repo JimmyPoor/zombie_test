@@ -63,16 +63,32 @@ class Data:
 				}
 
 	currentGartenId = '1'
-	currentChildId = '3'
+	currentChildId = '2'
 	currentParentId = '1'
 	currentLoginMobile = '15871153617'
 	currentCode = '88888888'
 	currentChild = None
 	currentParent = None
 
+	child_step1_fields = {
+		'id': '',
+		'xm': '',
+		'xmpy': ''
+	}
+
+
+
+	# invalid data
 	invalidDateList = ['1111-11-11', '9999-11-11']
-	invalidchildInfoData = [
-		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市}]
+	invalidchildInfoData_step1 = [
+		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市}, #身份证和一些相关字段
+		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市}
+	]
+
+	invalidchildInfoData_step2 = []
+	invalidchildInfoData_step3 = []
+	invalidchildInfoData_step4 = []
+
 
 	@staticmethod
 	def get_child_by_id(childId, session):

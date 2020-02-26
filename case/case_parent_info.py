@@ -22,7 +22,7 @@ class ParentInfoTest(unittest.TestCase):
 		self.editParentInfoApi = Data.urls['updateParentInfoApi']
 		self.rs = Login.parent_login()  # parent login and read policy first
 		self.isConfirm = StepAndConfirm.is_confirm(Data.currentChildId, self.rs)  # check current child is confirmed or not
-		self.currentParent = Data.get_parent_by_id(Data.currentParentId, self.rs)
+		self.currentParent = self.test_search_single_parent_by_correct_id(self)
 
 	def tearDown(self):
 		pass;
@@ -39,7 +39,7 @@ class ParentInfoTest(unittest.TestCase):
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
-		pass
+		return r.json()['data']
 
 	def test_search_parent_list_by_invalid_child_Id(self):
 		for i in Data.incorrectTextValues:

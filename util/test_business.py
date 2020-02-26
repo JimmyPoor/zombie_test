@@ -12,6 +12,7 @@ import requests
 import time
 
 from util.test_data import Data
+from util.test_enums import *
 
 
 class Login():
@@ -57,3 +58,18 @@ class StepAndConfirm():
 	@staticmethod
 	def is_hkInShangehai(childId, session):
 		return True
+
+
+class MockDataFactory():
+	@staticmethod
+	def create_child_validate_data(url, child, session):
+		dic_result = {}
+		for (k, v) in child.items():
+
+			jsonStr = Data.dic_to_json_string(child)
+			r = session.post(url, data=jsonStr)
+			rj = r.json()['status']
+			msg = 'property:%s  message:%s' % (k, r.json()['message'])
+			dic_result[k] = (rj,msg)
+
+		return dic_result

@@ -6,7 +6,7 @@
 """
 import json
 
-from util.test_models import child2dict
+from util.test_models import *
 
 
 class Data:
@@ -54,7 +54,7 @@ class Data:
 	}
 
 	incorrectTextValues = ['', r'/[`~!@#$%^&*()_+<>?:"{},.\/;', r'/[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im',
-						   'aaaaaaaaaaaaaaaaaaa888787878fgfgffgtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
+						   'aaaaa aaaaaaaaaaaaaa888787878fgfgffgtaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
 	numbers = [1, 2, 3, 4, 999, 11111, 55555]
 	messages = {'forbiddenEdit': 'can not edit after info has been confirmed',
 				'forbiddenInterview': 'can not add interview due to child info has been confirmed',
@@ -69,6 +69,10 @@ class Data:
 	currentCode = '88888888'
 	currentChild = None
 	currentParent = None
+
+	invalidDateList = ['1111-11-11', '9999-11-11']
+	invalidchildInfoData = [
+		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市}]
 
 	@staticmethod
 	def get_child_by_id(childId, session):
@@ -90,13 +94,13 @@ class Data:
 
 	@staticmethod
 	def get_garten_type(childId, sessoin):
-		child=None
-		if(Data.currentChild is None):
+		child = None
+		if (Data.currentChild is None):
 			child = Data.get_child_by_id(childId, sessoin)
 		else:
-			child= Data.currentChild
+			child = Data.currentChild
 
-		hkIsInShangehai=True
+		hkIsInShangehai = True
 		if hkIsInShangehai:
 			return '1'
 		else:

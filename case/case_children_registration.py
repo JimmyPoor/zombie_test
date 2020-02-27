@@ -18,11 +18,11 @@ class ChildRegistrationTest(unittest.TestCase):
 		self.searchKinderGardenByJWApi = Data.urls['searchKinderGardenByJWApi']
 		self.childRegistrationAPI = Data.urls['childRegistrationApi']
 		self.rs = Login.parent_login()  # login first
-		self.isRegistered = Child_Service.is_registered(Data.currentChildId, self.rs)
-		self.currentChild = Child_Service.get_child_by_id(Data.currentChildId, self.rs)
+		self.isRegistered = ChildService.is_registered(Data.currentChildId, self.rs)
+		self.currentChild = ChildService.get_child_by_id(Data.currentChildId, self.rs)
 		# 1按户籍地分配对口园, 2按居住地分配对口园(可选参数)"
-		self.gartenTypeId= Child_Service.get_garten_type(Data.currentChildId, self.rs)
-		self.isConfirm = Child_Service.is_confirm(self.currentChild)  # check current child is confirmed or not
+		self.gartenTypeId = ChildService.get_garten_type(self.currentChild, self.rs)
+		self.isConfirm = ChildService.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def setUp(self):
 		pass;
@@ -44,12 +44,8 @@ class ChildRegistrationTest(unittest.TestCase):
 			m = r.json()['message']
 			self.assertTrue(rj, 'error')
 
-
 	def test_garten_list_by_correct_id_and_type(self):
-		# todo： get typeId from service
-		# type= currentChild.type
-		r = self.rs.post(self.searchKinderGardenByJWApi,
-						 data=json.dumps({'id': Data.currentChildId, 'type': self.gartenTypeId}))
+		r = self.rs.post(self.searchKinderGardenByJWApi, data=json.dumps({'id': Data.currentChildId, 'type': self.gartenTypeId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj, 'error')
@@ -57,20 +53,16 @@ class ChildRegistrationTest(unittest.TestCase):
 
 	def test_child_registration_with_invalid_params(self):
 		for i in Data.incorrectTextValues:
-			r = self.rs.post(self.childRegistrationAPI,
-							 data=json.dumps({'bmid': i, 'fplx': i, 'bmxx': i}))
+			r = self.rs.post(self.childRegistrationAPI, data=json.dumps({'bmid': i, 'fplx': i, 'bmxx': i}))
 			rj = r.json()['status']
 			m = r.json()['message']
 			self.assertTrue(rj, 'error')
 		pass
 
 	def test_child_registration_with_correct_params(self):
-		r = self.rs.post(self.childRegistrationAPI,data=json.dumps({'bmid': Data.currentChild, 'fplx': self.gartenTypeId, 'bmxx': Data.currentGartenId}))
+		r = self.rs.post(self.childRegistrationAPI, data=json.dumps({'bmid': Data.currentChild, 'fplx': self.gartenTypeId, 'bmxx': Data.currentGartenId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj, 'success')
-		self.assertFalse(self.isRegistered, msg=Data.messages['forbiddenRegistration'])	# TODO? child cannot been registered
-		self.assertFalse(self.isConfirm, msg=Data.messages['forbiddenEdit'])# child cannot been confirmed
-
-if __name__ == '__main__':
-	unittest.main()
+		self.assertFalse(self.isRegistered,msg=Data.messages['forbiddenRegistration'])  # TODO? child cannot been registered
+		self.assertFalse(self.isConfirm, msg=Data.messages['forbiddenEdit'])  # child cannot been confirmed

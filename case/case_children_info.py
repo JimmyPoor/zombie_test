@@ -11,7 +11,6 @@ import unittest
 from util.test_business import *
 
 from util.test_data import Data
-from util.test_models import Child, child2dict
 
 
 class ChildrenInfoTest(unittest.TestCase):
@@ -23,8 +22,8 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.searchChildInfoApi = Data.urls['searchChildInfoApi']
 		self.searchChildListApi = Data.urls['searchChildListByFamilyIdApi']
 		self.rs = Login.parent_login()  # login and see policy first
-		self.currentChild = Child_Service.get_child_by_id(Data.currentChildId, self.rs)  # search current user
-		self.isConfirm = Child_Service.is_confirm(self.currentChild)  # check current child is confirmed or not
+		self.currentChild = ChildService.get_child_by_id(Data.currentChildId, self.rs)  # search current user
+		self.isConfirm = ChildService.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def tearDown(self):
 		pass;
@@ -55,16 +54,21 @@ class ChildrenInfoTest(unittest.TestCase):
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
 
-	@unittest.skip('todo')
-	def test_edit_child_info_step_1_with_invalid_param(self):
-		dic = Util.set_object_data_with_each_field_and_post(self.editChildInfoApi, Data.child_step1_fields, self.rs)
-		for k, v in dic:
-			self.assertTrue(v.rj == "error", msg=v.msg)
+	# @unittest.skip('todo')
+	# def test_edit_child_info_step_1_with_invalid_param(self):
+	# 	dic = Util.set_object_data_with_each_field_and_post(self.editChildInfoApi, Data.child_step1_dict, self.rs)
+	# 	for k, v in dic:
+	# 		self.assertTrue(v.rj == "error", msg=v.msg)
 
 	@unittest.skip('todo')
 	def test_edit_child_info_step_1_with_logic_issue_param(self):
+		# set correct data dic
 		dic = Util.mapping_dict(self.currentChild, Data.child_step1_dict)
-		pass
+		for i in Data.invalid_child_data_in_step1:
+			dic = Util.mapping_dict(i, dic)
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			rj = r.json()['status']
+			self.assertTrue(rj == 'error', msg=r.text)
 
 	def test_edit_child_info_step_1_with_correct_param(self):
 		dic = Util.mapping_dict(self.currentChild, Data.child_step1_dict)
@@ -72,6 +76,58 @@ class ChildrenInfoTest(unittest.TestCase):
 		rj = r.json()['status']
 		self.assertTrue(rj == 'success', msg=r.text)
 		pass
+
+	@unittest.skip('todo')
+	def test_edit_child_info_step_2_with_logic_issue_param(self):
+		# set correct data dic
+		dic = Util.mapping_dict(self.currentChild, Data.child_step2_dict)
+		# map invalid data
+		for i in Data.invalid_child_data_in_step2:
+			dic = Util.mapping_dict(i, dic)
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			rj = r.json()['status']
+			self.assertTrue(rj == 'error', msg=r.text)
+
+	def test_edit_child_info_step_2_with_correct_param(self):
+		dic = Util.mapping_dict(self.currentChild, Data.child_step2_dict)
+		r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
+		rj = r.json()['status']
+		self.assertTrue(rj == 'success', msg=r.text)
+		pass
+
+	@unittest.skip('todo')
+	def test_edit_child_info_step_3_with_logic_issue_param(self):
+		# set correct data dic
+		dic = Util.mapping_dict(self.currentChild, Data.child_step3_dict)
+		# map invalid data
+		for i in Data.invalid_child_data_in_step3:
+			dic = Util.mapping_dict(i, dic)
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			rj = r.json()['status']
+			self.assertTrue(rj == 'error', msg=r.text)
+
+	def test_edit_child_info_step_3_with_correct_param(self):
+		dic = Util.mapping_dict(self.currentChild, Data.child_step3_dict)
+		r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
+		rj = r.json()['status']
+		self.assertTrue(rj == 'success', msg=r.text)
+
+	@unittest.skip('todo')
+	def test_edit_child_info_step_4_with_logic_issue_param(self):
+		# set correct data dic
+		dic = Util.mapping_dict(self.currentChild, Data.child_step4_dict)
+		# map invalid data
+		for i in Data.invalid_child_data_in_step4:
+			dic = Util.mapping_dict(i, dic)
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			rj = r.json()['status']
+			self.assertTrue(rj == 'error', msg=r.text)
+
+	def test_edit_child_info_step_4_with_correct_param(self):
+		dic = Util.mapping_dict(self.currentChild, Data.child_step4_dict)
+		r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
+		rj = r.json()['status']
+		self.assertTrue(rj == 'success', msg=r.text)
 
 
 	def test_and_record_crrent_step_no(self):

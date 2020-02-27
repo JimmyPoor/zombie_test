@@ -61,7 +61,7 @@ class Data:
 				'forbiddenConfirm': ' child info hass been confirmed'
 				}
 
-	# correct and intial data
+	# initial data
 
 	currentGartenId = '1'
 	currentChildId = '2'
@@ -71,120 +71,42 @@ class Data:
 	currentChild = None
 	currentParent = None
 
-	child_step1_dict = {
-		'id': '',
-		'xm': '',
-		'xmpy': '',
-		'cym': '',
-		'csrq': '',
-		'xb': '',
-		'mz': '',
-		'sfzlx': '',
-		'sfzjh': '',
-		'gjdq': '',
-		'jg': '',
-		'gatqw': '',
-		'wjsflb': ''
+	child_step1_dict = {'id': currentChildId, 'xm': '', 'xmpy': '', 'cym': '', 'csrq': '', 'xb': '', 'mz': '',
+						'sfzlx': '', 'sfzjh': '', 'gjdq': '', 'jg': '', 'gatqw': '', 'wjsflb': ''}
 
-	}
+	child_step2_dict = {'id': currentChildId, 'hkxz': '', 'fnhklx': '', 'hjlb': '', 'hzgx': '', 'hksf': '',
+						'hkcity': '', 'hkqx': '',
+						'hkjz': '', 'hkjwh': '', 'hjdjr': '', 'wsshkdz': '', }
 
-	child_step2_dict = {}
+	child_step3_dict = {'id': currentChildId, 'xzzcity': '', 'xzzsf': '', 'xzzqx': '', 'xzzjd': '', 'xzzjw': '',
+						'xzzyzbm': '', 'lxdh': '', 'jzzlx': '', 'jzzhm': '', 'zfqk': '', 'htbh': '', 'qzrq': '',
+						'gfrgx': '', 'czbh': '', 'cqfdz': '',
+						}
 
-	child_step3_dict = {}
+	child_step4_dict = {'id': currentChildId, 'sfdszv': '', 'sfjlszn': '', 'sfbdzn': '', 'sfdb': '', 'sfxysqzz': '',
+						'sfge': '', 'sflset': '', 'sfnmgtzzn': '', 'sflqcjz': '', 'cjzbh': '', 'cjzfzrq': '',
+						'sflqygbbk': '', 'cjlb': '', 'ygbbkfzrq': '', 'ygbbkcjlb': ''}
 
-	child_step4_dict = {}
+	parent_step_dict={'id':currentParentId,'zjlx':'','zjhm':'','hksf':'','hks':'','qx':''}
 
-	# invalid data
+	# invalid logic data for child info
 
 	invalidDateList = ['1111-11-11', '9999-11-11']
-	invalidchildInfoData_step1 = [
-		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市},  # 身份证和一些相关字段
-		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市}
+	invalid_child_data_in_step1 = [
+		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '420222200506193716', 'jg': Enums_SHANGHAI.上海市},  # 身份证和一些相关字段
+		{'gatqw': Enums_GATQW.台湾同胞, 'sfzjh': '420222200506193716'}
 	]
 
-	invalidchildInfoData_step2 = []
-	invalidchildInfoData_step3 = []
-	invalidchildInfoData_step4 = []
-
-	# for i in Data.incorrectTextValues:
-	# 	dic['xm'] = i
-	# 	dic['xmpy'] = i
-	# 	dic['cym'] = i
-	# 	dic['csrq'] = Data.invalidDateList[0]
-	# 	dic['xb'] = i
-	# 	dic['mz'] = i
-	# 	# dic['zjlx'] = i
-	# 	dic['sfzlx'] = i
-	# 	dic['sfzjh'] = i
-	# 	dic['gjdq'] = i
-	# 	dic['jg'] = i
-	# 	dic['gatqw'] = i
-	# 	dic['wjsflb'] = i
-	# 	MockDataFactory.create_child_data_and_post(self.editChildInfoApi, dic, self.rs)
-	# 	self.assertTrue(rj == "error", msg=m)
-
-	#
-	# @unittest.skip('todo')
-	# def test_edit_child_info_step_2_with_invalid_data(self):
-	# 	for i in Data.incorrectTextValues:
-	# 		self.currentChild['hkxz'] = i
-	# 		self.currentChild['fnhklx'] = i
-	# 		self.currentChild['hjlb'] = i
-	# 		self.currentChild['hzgx'] = i
-	# 		self.currentChild['hksf'] = i
-	# 		self.currentChild['hkcity'] = i
-	# 		self.currentChild['hkqx'] = i
-	# 		self.currentChild['hkjz'] = i
-	# 		self.currentChild['hkjwh'] = i
-	# 		self.currentChild['hjdjr'] =  Data.invalidDateList[0]
-	# 		self.currentChild['wsshkdz'] = i
-	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
-	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
-	# 		rj = r.json()['status']
-	# 		m = r.json()['message']
-	# 		self.assertTrue(rj == "error", msg=m)
-	#
-	# @unittest.skip('todo')
-	# def test_edit_child_info_step_3_with_invalid_data(self):
-	# 	for i in Data.incorrectTextValues:
-	# 		self.currentChild['xzzsf'] = i
-	# 		self.currentChild['xzzcity'] = i
-	# 		self.currentChild['xzzsf'] = i
-	# 		self.currentChild['xzzqx'] =i
-	# 		self.currentChild['xzzjd'] = i
-	# 		self.currentChild['xzzjw'] = i
-	# 		self.currentChild['xzzyzbm'] = i
-	# 		self.currentChild['lxdh'] = i
-	# 		self.currentChild['jzzlx'] = i
-	# 		self.currentChild['jzzhm'] = i
-	# 		self.currentChild['zfqk'] = i #住房性质
-	# 		self.currentChild['htbh'] = i #合同编号
-	# 		self.currentChild['qzrq'] = Data.invalidDateList[0] #起租日期
-	# 		self.currentChild['gfrgx'] = i #与购房人关系，与产权人关系
-	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
-	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
-	# 		rj = r.json()['status']
-	# 		m = r.json()['message']
-	# 		self.assertTrue(rj == "error", msg=m)
-	#
-	# @unittest.skip('todo')
-	# def test_edit_child_info_step_4_with_invalid_data(self):
-	# 	for i in Data.incorrectTextValues:
-	# 		self.currentChild['hkxz'] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = Data.invalidDateList[0]
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
-	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
-	# 		rj = r.json()['status']
-	# 		m = r.json()['message']
-	# 		self.assertTrue(rj == "error", msg=m)
+	invalid_child_data_in_step2 = [{'hkxz': Enums_HKXZ.其他户口, 'fnhklx': Enums_FNHKLX.县城},
+								   {'hksf': Enums_OTHER_CITY.河北省, 'hkcity': Enums_SHANGHAI.上海市,
+									'hkqx': Enums_SHANGHAI.徐汇区, 'hkjz': Enums_SHANGHAI.华泾镇,
+									'hkjwh': Enums_SHANGHAI.华建居委},
+								   {'wsshkdz': incorrectTextValues[1]}
+								   ]
+	invalid_child_data_in_step3 = [
+		{'xzzsf': Enums_OTHER_CITY.河北省, 'xzzcity': Enums_SHANGHAI.上海市, 'xzzqx': Enums_SHANGHAI.徐汇区,
+		 'xzzjd': Enums_SHANGHAI.华泾镇, 'xzzjw': Enums_SHANGHAI.华建居委},
+		{'jzzlx': Enums_JZZLX.上海市居住登记凭证, 'jzzhm': incorrectTextValues[1]},
+		{'zfqk': Enums_ZFXZ.集体宿舍, 'czbh': '324523'}
+	]
+	invalid_child_data_in_step4 = [{'sflqcjz':'0','cjlb':Enums_CJLB.综合残疾}]

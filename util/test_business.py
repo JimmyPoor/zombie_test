@@ -11,7 +11,7 @@ import json
 import requests
 import time
 
-from util.test_data import Data
+from util.test_data import Data, Enums_SHANGHAI
 
 
 class Login():
@@ -39,7 +39,7 @@ class Login():
 		return Login.s is not None
 
 
-class Parent_Service():
+class ParentService():
 	def __init__(self):
 		pass
 
@@ -51,7 +51,7 @@ class Parent_Service():
 		return Data.currentParent
 
 
-class Child_Service():
+class ChildService:
 
 	def __init__(self):
 		pass
@@ -64,15 +64,9 @@ class Child_Service():
 		return Data.currentChild
 
 	@staticmethod
-	def get_garten_type(child_id, session):
-		child = None
-		if (Data.currentChild is None):
-			child = Data.get_child_by_id(child_id, session)
-		else:
-			child = Data.currentChild
-
-		hkIsInShangehai = True
-		if hkIsInShangehai:
+	def get_garten_type(child, session):
+		hk_is_shanghai = child['hkcity'] == Enums_SHANGHAI.上海市
+		if hk_is_shanghai:
 			return '1'
 		else:
 			return '2'
@@ -82,14 +76,10 @@ class Child_Service():
 		return child['confirmstatus'] == '1'
 
 	@staticmethod
-	def is_registered(childId, session):
+	def is_registered(child_id, session):
 		result = False
-		gartenId = None
-		return result is True and gartenId is not None
-
-	@staticmethod
-	def is_hkInShangehai(childId, session):
-		return True
+		garten_id = None
+		return result is True and garten_id is not None
 
 
 class Util:

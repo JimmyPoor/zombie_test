@@ -20,9 +20,9 @@ class KindergartenInterviewTest(unittest.TestCase):
 		self.addInterviewDateApi = Data.urls['addInterviewDateApi']
 		self.childRgistryInfoConfirmApi = Data.urls['childRgistryInfoConfirmApi']
 		self.rs = Login.parent_login()  # login first
-		self.isRegistered = Child_Service.is_registered(Data.currentChildId, self.rs)
-		self.currentChild = Child_Service.get_child_by_id(Data.currentChildId, self.rs)
-		self.isConfirm = Child_Service.is_confirm(self.currentChild)  # check current child is confirmed or not
+		self.isRegistered = ChildService.is_registered(Data.currentChildId, self.rs)
+		self.currentChild = ChildService.get_child_by_id(Data.currentChildId, self.rs)
+		self.isConfirm = ChildService.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def setUp(self):
 		pass

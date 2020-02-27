@@ -7,8 +7,7 @@
 import json
 import unittest
 
-from util.test_business import Login
-from util.test_business import StepAndConfirm
+from util.test_business import *
 from util.test_data import Data
 
 
@@ -21,9 +20,9 @@ class KindergartenInterviewTest(unittest.TestCase):
 		self.addInterviewDateApi = Data.urls['addInterviewDateApi']
 		self.childRgistryInfoConfirmApi = Data.urls['childRgistryInfoConfirmApi']
 		self.rs = Login.parent_login()  # login first
-		self.isRegistered = StepAndConfirm.is_registered(Data.currentChildId, self.rs)
-		self.currentChild = Data.get_child_by_id(Data.currentChildId, self.rs)
-		self.isConfirm = StepAndConfirm.is_confirm(self.currentChild)  # check current child is confirmed or not
+		self.isRegistered = Child_Service.is_registered(Data.currentChildId, self.rs)
+		self.currentChild = Child_Service.get_child_by_id(Data.currentChildId, self.rs)
+		self.isConfirm = Child_Service.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def setUp(self):
 		pass

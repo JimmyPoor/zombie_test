@@ -4,7 +4,6 @@
 @Date:Crate in 16:09 2020/1/20
 @Modified by:
 """
-import json
 
 from util.test_models import *
 
@@ -62,6 +61,8 @@ class Data:
 				'forbiddenConfirm': ' child info hass been confirmed'
 				}
 
+	# correct and intial data
+
 	currentGartenId = '1'
 	currentChildId = '2'
 	currentParentId = '1'
@@ -70,18 +71,34 @@ class Data:
 	currentChild = None
 	currentParent = None
 
-	child_step1_fields = {
+	child_step1_dict = {
 		'id': '',
 		'xm': '',
-		'xmpy': ''
+		'xmpy': '',
+		'cym': '',
+		'csrq': '',
+		'xb': '',
+		'mz': '',
+		'sfzlx': '',
+		'sfzjh': '',
+		'gjdq': '',
+		'jg': '',
+		'gatqw': '',
+		'wjsflb': ''
+
 	}
 
+	child_step2_dict = {}
 
+	child_step3_dict = {}
+
+	child_step4_dict = {}
 
 	# invalid data
+
 	invalidDateList = ['1111-11-11', '9999-11-11']
 	invalidchildInfoData_step1 = [
-		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市}, #身份证和一些相关字段
+		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市},  # 身份证和一些相关字段
 		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '310100200905201122', 'jg': Enums_SHANGHAI.上海市}
 	]
 
@@ -89,35 +106,85 @@ class Data:
 	invalidchildInfoData_step3 = []
 	invalidchildInfoData_step4 = []
 
+	# for i in Data.incorrectTextValues:
+	# 	dic['xm'] = i
+	# 	dic['xmpy'] = i
+	# 	dic['cym'] = i
+	# 	dic['csrq'] = Data.invalidDateList[0]
+	# 	dic['xb'] = i
+	# 	dic['mz'] = i
+	# 	# dic['zjlx'] = i
+	# 	dic['sfzlx'] = i
+	# 	dic['sfzjh'] = i
+	# 	dic['gjdq'] = i
+	# 	dic['jg'] = i
+	# 	dic['gatqw'] = i
+	# 	dic['wjsflb'] = i
+	# 	MockDataFactory.create_child_data_and_post(self.editChildInfoApi, dic, self.rs)
+	# 	self.assertTrue(rj == "error", msg=m)
 
-	@staticmethod
-	def get_child_by_id(childId, session):
-		if Data.currentChild is None:
-			r = session.post(Data.urls['searchChildInfoApi'], data=json.dumps({'id': childId}))
-			Data.currentChild = r.json()['data']
-		return Data.currentChild
-
-	@staticmethod
-	def get_parent_by_id(parentId, session):
-		if Data.currentParent is None:
-			r = session.post(Data.urls['searchSingleParentApi'], data=json.dumps({'id': parentId}))
-			Data.currentParent = r.json()['data']
-		return Data.currentParent
-
-	@staticmethod
-	def dic_to_json_string(dic):
-		return json.dumps(dic, ensure_ascii=False).encode('utf-8')  # fix chinese char issue
-
-	@staticmethod
-	def get_garten_type(childId, sessoin):
-		child = None
-		if (Data.currentChild is None):
-			child = Data.get_child_by_id(childId, sessoin)
-		else:
-			child = Data.currentChild
-
-		hkIsInShangehai = True
-		if hkIsInShangehai:
-			return '1'
-		else:
-			return '2'
+	#
+	# @unittest.skip('todo')
+	# def test_edit_child_info_step_2_with_invalid_data(self):
+	# 	for i in Data.incorrectTextValues:
+	# 		self.currentChild['hkxz'] = i
+	# 		self.currentChild['fnhklx'] = i
+	# 		self.currentChild['hjlb'] = i
+	# 		self.currentChild['hzgx'] = i
+	# 		self.currentChild['hksf'] = i
+	# 		self.currentChild['hkcity'] = i
+	# 		self.currentChild['hkqx'] = i
+	# 		self.currentChild['hkjz'] = i
+	# 		self.currentChild['hkjwh'] = i
+	# 		self.currentChild['hjdjr'] =  Data.invalidDateList[0]
+	# 		self.currentChild['wsshkdz'] = i
+	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
+	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
+	# 		rj = r.json()['status']
+	# 		m = r.json()['message']
+	# 		self.assertTrue(rj == "error", msg=m)
+	#
+	# @unittest.skip('todo')
+	# def test_edit_child_info_step_3_with_invalid_data(self):
+	# 	for i in Data.incorrectTextValues:
+	# 		self.currentChild['xzzsf'] = i
+	# 		self.currentChild['xzzcity'] = i
+	# 		self.currentChild['xzzsf'] = i
+	# 		self.currentChild['xzzqx'] =i
+	# 		self.currentChild['xzzjd'] = i
+	# 		self.currentChild['xzzjw'] = i
+	# 		self.currentChild['xzzyzbm'] = i
+	# 		self.currentChild['lxdh'] = i
+	# 		self.currentChild['jzzlx'] = i
+	# 		self.currentChild['jzzhm'] = i
+	# 		self.currentChild['zfqk'] = i #住房性质
+	# 		self.currentChild['htbh'] = i #合同编号
+	# 		self.currentChild['qzrq'] = Data.invalidDateList[0] #起租日期
+	# 		self.currentChild['gfrgx'] = i #与购房人关系，与产权人关系
+	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
+	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
+	# 		rj = r.json()['status']
+	# 		m = r.json()['message']
+	# 		self.assertTrue(rj == "error", msg=m)
+	#
+	# @unittest.skip('todo')
+	# def test_edit_child_info_step_4_with_invalid_data(self):
+	# 	for i in Data.incorrectTextValues:
+	# 		self.currentChild['hkxz'] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = Data.invalidDateList[0]
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		self.currentChild[''] = i
+	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
+	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
+	# 		rj = r.json()['status']
+	# 		m = r.json()['message']
+	# 		self.assertTrue(rj == "error", msg=m)

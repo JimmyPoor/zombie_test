@@ -8,8 +8,8 @@
 import json
 import unittest
 
-from util.test_business import Login, Util
-from util.test_business import StepAndConfirm
+from util.test_business import *
+
 from util.test_data import Data
 from util.test_models import Child, child2dict
 
@@ -23,13 +23,12 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.searchChildInfoApi = Data.urls['searchChildInfoApi']
 		self.searchChildListApi = Data.urls['searchChildListByFamilyIdApi']
 		self.rs = Login.parent_login()  # login and see policy first
-		self.currentChild = Data.get_child_by_id(Data.currentChildId, self.rs)  # search current user
-		self.isConfirm = StepAndConfirm.is_confirm(self.currentChild)  # check current child is confirmed or not
+		self.currentChild = Child_Service.get_child_by_id(Data.currentChildId, self.rs)  # search current user
+		self.isConfirm = Child_Service.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def tearDown(self):
 		pass;
 
-	#@unittest.skip('todo')
 	def test_get_child_list_by_invalid_family_id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.searchChildListApi, data=json.dumps({'familyUserid': i}))
@@ -37,14 +36,12 @@ class ChildrenInfoTest(unittest.TestCase):
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
 
-	#@unittest.skip('todo')
 	def test_get_child_list_by_correct_family_id(self):
 		r = self.rs.post(self.searchChildListApi, data=json.dumps({'familyUserid': Data.currentParentId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
 
-	#@unittest.skip('todo')
 	def test_get_child_info_by_invalid_id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': i}))
@@ -52,13 +49,11 @@ class ChildrenInfoTest(unittest.TestCase):
 			m = r.json()['message']
 			self.assertTrue(rj == 'error', msg=m)
 
-	#@unittest.skip('todo')
 	def test_get_child_info_by_correct_id(self):
 		r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
 		rj = r.json()['status']
 		m = r.json()['message']
 		self.assertTrue(rj == 'success', msg=m)
-
 
 	@unittest.skip('todo')
 	def test_edit_child_info_step_1_with_invalid_param(self):
@@ -66,95 +61,18 @@ class ChildrenInfoTest(unittest.TestCase):
 		for k, v in dic:
 			self.assertTrue(v.rj == "error", msg=v.msg)
 
+	@unittest.skip('todo')
 	def test_edit_child_info_step_1_with_logic_issue_param(self):
+		dic = Util.mapping_dict(self.currentChild, Data.child_step1_dict)
 		pass
 
 	def test_edit_child_info_step_1_with_correct_param(self):
+		dic = Util.mapping_dict(self.currentChild, Data.child_step1_dict)
+		r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
+		rj = r.json()['status']
+		self.assertTrue(rj == 'success', msg=r.text)
 		pass
 
-
-	# for i in Data.incorrectTextValues:
-	# 	dic['xm'] = i
-	# 	dic['xmpy'] = i
-	# 	dic['cym'] = i
-	# 	dic['csrq'] = Data.invalidDateList[0]
-	# 	dic['xb'] = i
-	# 	dic['mz'] = i
-	# 	# dic['zjlx'] = i
-	# 	dic['sfzlx'] = i
-	# 	dic['sfzjh'] = i
-	# 	dic['gjdq'] = i
-	# 	dic['jg'] = i
-	# 	dic['gatqw'] = i
-	# 	dic['wjsflb'] = i
-	# 	MockDataFactory.create_child_data_and_post(self.editChildInfoApi, dic, self.rs)
-	# 	self.assertTrue(rj == "error", msg=m)
-
-	#
-	# @unittest.skip('todo')
-	# def test_edit_child_info_step_2_with_invalid_data(self):
-	# 	for i in Data.incorrectTextValues:
-	# 		self.currentChild['hkxz'] = i
-	# 		self.currentChild['fnhklx'] = i
-	# 		self.currentChild['hjlb'] = i
-	# 		self.currentChild['hzgx'] = i
-	# 		self.currentChild['hksf'] = i
-	# 		self.currentChild['hkcity'] = i
-	# 		self.currentChild['hkqx'] = i
-	# 		self.currentChild['hkjz'] = i
-	# 		self.currentChild['hkjwh'] = i
-	# 		self.currentChild['hjdjr'] =  Data.invalidDateList[0]
-	# 		self.currentChild['wsshkdz'] = i
-	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
-	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
-	# 		rj = r.json()['status']
-	# 		m = r.json()['message']
-	# 		self.assertTrue(rj == "error", msg=m)
-	#
-	# @unittest.skip('todo')
-	# def test_edit_child_info_step_3_with_invalid_data(self):
-	# 	for i in Data.incorrectTextValues:
-	# 		self.currentChild['xzzsf'] = i
-	# 		self.currentChild['xzzcity'] = i
-	# 		self.currentChild['xzzsf'] = i
-	# 		self.currentChild['xzzqx'] =i
-	# 		self.currentChild['xzzjd'] = i
-	# 		self.currentChild['xzzjw'] = i
-	# 		self.currentChild['xzzyzbm'] = i
-	# 		self.currentChild['lxdh'] = i
-	# 		self.currentChild['jzzlx'] = i
-	# 		self.currentChild['jzzhm'] = i
-	# 		self.currentChild['zfqk'] = i #住房性质
-	# 		self.currentChild['htbh'] = i #合同编号
-	# 		self.currentChild['qzrq'] = Data.invalidDateList[0] #起租日期
-	# 		self.currentChild['gfrgx'] = i #与购房人关系，与产权人关系
-	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
-	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
-	# 		rj = r.json()['status']
-	# 		m = r.json()['message']
-	# 		self.assertTrue(rj == "error", msg=m)
-	#
-	# @unittest.skip('todo')
-	# def test_edit_child_info_step_4_with_invalid_data(self):
-	# 	for i in Data.incorrectTextValues:
-	# 		self.currentChild['hkxz'] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = Data.invalidDateList[0]
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		self.currentChild[''] = i
-	# 		jsonStr = Data.dic_to_json_string(self.currentChild)
-	# 		r = self.rs.post(self.editChildInfoApi, data=jsonStr)
-	# 		rj = r.json()['status']
-	# 		m = r.json()['message']
-	# 		self.assertTrue(rj == "error", msg=m)
 
 	def test_and_record_crrent_step_no(self):
 		pass

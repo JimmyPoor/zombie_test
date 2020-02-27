@@ -12,15 +12,14 @@ import requests
 import time
 
 from util.test_data import Data
-from util.test_enums import *
 
 
 class Login():
 	s = None
 
 	@staticmethod
-	def parent_login(isforce=False):
-		if (Login.s is None or isforce):
+	def parent_login(is_force=False):
+		if Login.s is None or is_force:
 			Login.s = requests.session()
 			r = Login.s.post(Data.urls['loginApi'], data=json.dumps({'mobile': '15871153617', 'code': '88888888'}))
 			m = (r.json()['message'])
@@ -40,14 +39,47 @@ class Login():
 		return Login.s is not None
 
 
-class StepAndConfirm():
+class Parent_Service():
+	def __init__(self):
+		pass
+
+	@staticmethod
+	def get_parent_by_id(parent_id, session):
+		if Data.currentParent is None:
+			r = session.post(Data.urls['searchSingleParentApi'], data=json.dumps({'id': parent_id}))
+			Data.currentParent = r.json()['data']
+		return Data.currentParent
+
+
+class Child_Service():
 
 	def __init__(self):
 		pass
 
 	@staticmethod
+	def get_child_by_id(child_id, session):
+		if Data.currentChild is None:
+			r = session.post(Data.urls['searchChildInfoApi'], data=json.dumps({'id': child_id}))
+			Data.currentChild = r.json()['data']
+		return Data.currentChild
+
+	@staticmethod
+	def get_garten_type(child_id, session):
+		child = None
+		if (Data.currentChild is None):
+			child = Data.get_child_by_id(child_id, session)
+		else:
+			child = Data.currentChild
+
+		hkIsInShangehai = True
+		if hkIsInShangehai:
+			return '1'
+		else:
+			return '2'
+
+	@staticmethod
 	def is_confirm(child):
-		return child['confirmstatus']=='1'
+		return child['confirmstatus'] == '1'
 
 	@staticmethod
 	def is_registered(childId, session):
@@ -75,3 +107,14 @@ class Util:
 				dic_result[k] = (rj, msg)
 
 		return dic_result
+
+	@staticmethod
+	def mapping_dict(source, target):
+		for k in source:
+			if k in target:
+				target[k] = source[k]
+
+		return target
+
+	def dic_to_json_string(dic):
+		return json.dumps(dic, ensure_ascii=False).encode('utf-8')  # fix chinese char issue

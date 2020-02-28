@@ -86,15 +86,15 @@ class Util:
 	@staticmethod
 	def set_object_data_with_each_field_and_post(url, obj, session):
 		dic_result = {}
+		z = 0
 		for k in obj:
 			for i in Data.incorrectTextValues:
-				dic_temp = {k: i}
-				dic_temp['id'] = obj['id']
-				# json_str = Data.dic_to_json_string(dic_temp)
+				dic_temp = {k: i, 'id': obj['id']}
 				r = session.post(url, data=json.dumps(dic_temp))
 				rj = r.json()['status']
 				msg = 'property:%s  message:%s' % (k, r.json()['message'])
-				dic_result[k] = (rj, msg)
+				dic_result[z] = {'rj': rj, 'msg': msg}
+				z = z + 1
 
 		return dic_result
 
@@ -106,5 +106,14 @@ class Util:
 
 		return target
 
+	@staticmethod
+	def is_match(source, target):
+		result=True
+		for k in source:
+			if k not in target:
+				result = False
+		return result
+
+	@staticmethod
 	def dic_to_json_string(dic):
 		return json.dumps(dic, ensure_ascii=False).encode('utf-8')  # fix chinese char issue

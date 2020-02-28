@@ -66,7 +66,7 @@ class ChildrenInfoTest(unittest.TestCase):
 		dic = Util.mapping_dict(self.currentChild, Data.child_step1_dict)
 		for i in Data.invalid_child_data_in_step1:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 
@@ -84,7 +84,7 @@ class ChildrenInfoTest(unittest.TestCase):
 		# map invalid data
 		for i in Data.invalid_child_data_in_step2:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 
@@ -102,7 +102,7 @@ class ChildrenInfoTest(unittest.TestCase):
 		# map invalid data
 		for i in Data.invalid_child_data_in_step3:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 
@@ -119,7 +119,7 @@ class ChildrenInfoTest(unittest.TestCase):
 		# map invalid data
 		for i in Data.invalid_child_data_in_step4:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps({'id': Data.currentChildId}))
+			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 

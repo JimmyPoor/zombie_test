@@ -4,8 +4,7 @@
 @Date:Crate in 16:09 2020/1/20
 @Modified by:
 """
-
-from util.test_models import *
+from util.test_enums import *
 
 
 class Data:
@@ -27,7 +26,9 @@ class Data:
 	__currentStepApi = '/pdyeyzs/pdyeyzs/student/next'
 	__addInterviewDateApi = '/pdyeyzs/pdyeyzs/student/addInterview'
 	__childRegistryInfoConfirmApi = '/pdyeyzs/pdyeyzs/student/confirmation'
-	__exportToPDFApi = 'pdyeyzs/pdyeyzs/student/exportRegistrationPDF'
+	__exportToPDFApi = '/pdyeyzs/pdyeyzs/student/exportRegistrationPDF'
+	__registrationInfoApi = '/pdyeyzs/pdyeyzs/student/selectBaomingByXsid'
+	__noticeListApi = '/pdyeyzs/pdyeyzs/notice/listNotice'
 
 	def __init__(self) -> None:
 		super().__init__()
@@ -49,7 +50,8 @@ class Data:
 		'currentStepApi': __host + __currentStepApi,
 		'addInterviewDateApi': __host + __addInterviewDateApi,
 		'childRgistryInfoConfirmApi': __host + __childRegistryInfoConfirmApi,
-		'exportToPDFApi': __host + __exportToPDFApi
+		'exportToPDFApi': __host + __exportToPDFApi,
+		'registrationInfoApi': __host + __readPolicyApi
 	}
 
 	incorrectTextValues = ['', r'/[`~!@#$%^&*()_+<>?:"{},.\/;', r'/[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im',
@@ -87,26 +89,35 @@ class Data:
 						'sfge': '', 'sflset': '', 'sfnmgtzzn': '', 'sflqcjz': '', 'cjzbh': '', 'cjzfzrq': '',
 						'sflqygbbk': '', 'cjlb': '', 'ygbbkfzrq': '', 'ygbbkcjlb': ''}
 
-	parent_step_dict={'id':currentParentId,'zjlx':'','zjhm':'','hksf':'','hks':'','qx':''}
+	parent_dict = {'id': currentParentId, 'dh': '', 'zjlx': '', 'sfjhr': '', 'cyzj': '', 'zjhm': '', 'hjdzjdz': '',
+				   'hks': '', 'jzzyxq': '', 'hjxxdz': '',
+				   'sfbzf': '', 'jzzhm': '', 'jzzjfsfdb': '', 'hksf': '', 'qx': '', 'xb': '', 'studentid': '', 'xl': '',
+				   'xm': '', 'gzdw': '', 'impno': '', 'jzzlx': '', 'jydjcs': '', 'hjdzjwhc': ''}
 
-	# invalid logic data for child info
+	registration_info_dict = {'id': '', 'msg': '', 'bmxx': '', 'bh': '', 'bmsj': '', 'mssj': '', 'schoolname': '',
+							  'msjg': '', 'bmbj': ''}
+
+	# invalid logic data
 
 	invalidDateList = ['1111-11-11', '9999-11-11']
 	invalid_child_data_in_step1 = [
-		{'csrq': '2010-01-01', 'xb': Enums_XB.女, 'sfzjh': '420222200506193716', 'jg': Enums_SHANGHAI.上海市},  # 身份证和一些相关字段
-		{'gatqw': Enums_GATQW.台湾同胞, 'sfzjh': '420222200506193716'}
+		{'csrq': '2010-01-01', 'xb': Enums_XB.女.value, 'sfzjh': '420222200506193716', 'jg': Enums_SHANGHAI.上海市.value},
+		# 身份证和一些相关字段
+		{'gatqw': Enums_GATQW.台湾同胞.value, 'sfzjh': '420222200506193716'}
 	]
 
-	invalid_child_data_in_step2 = [{'hkxz': Enums_HKXZ.其他户口, 'fnhklx': Enums_FNHKLX.县城},
-								   {'hksf': Enums_OTHER_CITY.河北省, 'hkcity': Enums_SHANGHAI.上海市,
-									'hkqx': Enums_SHANGHAI.徐汇区, 'hkjz': Enums_SHANGHAI.华泾镇,
-									'hkjwh': Enums_SHANGHAI.华建居委},
+	invalid_child_data_in_step2 = [{'hkxz': Enums_HKXZ.其他户口.value, 'fnhklx': Enums_FNHKLX.县城.value},
+								   {'hksf': Enums_OTHER_CITY.河北省, 'hkcity': Enums_SHANGHAI.上海市.value,
+									'hkqx': Enums_SHANGHAI.徐汇区.value, 'hkjz': Enums_SHANGHAI.华泾镇.value,
+									'hkjwh': Enums_SHANGHAI.华建居委.value},
 								   {'wsshkdz': incorrectTextValues[1]}
 								   ]
 	invalid_child_data_in_step3 = [
-		{'xzzsf': Enums_OTHER_CITY.河北省, 'xzzcity': Enums_SHANGHAI.上海市, 'xzzqx': Enums_SHANGHAI.徐汇区,
-		 'xzzjd': Enums_SHANGHAI.华泾镇, 'xzzjw': Enums_SHANGHAI.华建居委},
-		{'jzzlx': Enums_JZZLX.上海市居住登记凭证, 'jzzhm': incorrectTextValues[1]},
-		{'zfqk': Enums_ZFXZ.集体宿舍, 'czbh': '324523'}
+		{'xzzsf': Enums_OTHER_CITY.河北省.value, 'xzzcity': Enums_SHANGHAI.上海市.value, 'xzzqx': Enums_SHANGHAI.徐汇区.value,
+		 'xzzjd': Enums_SHANGHAI.华泾镇.value, 'xzzjw': Enums_SHANGHAI.华建居委.value},
+		{'jzzlx': Enums_JZZLX.上海市居住登记凭证.value, 'jzzhm': incorrectTextValues[1]},
+		{'zfqk': Enums_ZFXZ.集体宿舍.value, 'czbh': '324523'}
 	]
-	invalid_child_data_in_step4 = [{'sflqcjz':'0','cjlb':Enums_CJLB.综合残疾}]
+	invalid_child_data_in_step4 = [{'sflqcjz': '0', 'cjlb': Enums_CJLB.综合残疾.value}]
+	invalid_parent_data = [{'hksf': Enums_OTHER_CITY.河北省.value, 'hks': Enums_SHANGHAI.上海市.value},
+						   {'zjhm': '310115198210191992', 'jzzlx': Enums_JZZLX.上海市居住登记凭证.value}]

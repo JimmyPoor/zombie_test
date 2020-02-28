@@ -17,6 +17,7 @@ class ChildRegistrationTest(unittest.TestCase):
 	def setUpClass(self):
 		self.searchKinderGardenByJWApi = Data.urls['searchKinderGardenByJWApi']
 		self.childRegistrationAPI = Data.urls['childRegistrationApi']
+		self.childRegistrationInfoApi= Data.urls['registrationInfoApi']
 		self.rs = Login.parent_login()  # login first
 		self.isRegistered = ChildService.is_registered(Data.currentChildId, self.rs)
 		self.currentChild = ChildService.get_child_by_id(Data.currentChildId, self.rs)
@@ -66,3 +67,15 @@ class ChildRegistrationTest(unittest.TestCase):
 		self.assertTrue(rj, 'success')
 		self.assertFalse(self.isRegistered,msg=Data.messages['forbiddenRegistration'])  # TODO? child cannot been registered
 		self.assertFalse(self.isConfirm, msg=Data.messages['forbiddenEdit'])  # child cannot been confirmed
+
+	def test_search_registraion_info_with_invalid_params(self):
+		pass;
+
+	def test_search_registraion_info_with_correct_params(self):
+		r = self.rs.post(self.childRegistrationInfoApi,data=json.dumps({'xsid': Data.currentChildId}))
+		rj = r.json()['status']
+		dic=r.json()['data']
+		self.assertTrue(rj, 'success',msg=r.text)
+		self.assertTrue(Util.is_match(Data.registration_info_dict,dic))
+		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenEdit'])
+

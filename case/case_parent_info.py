@@ -19,8 +19,8 @@ class ParentInfoTest(unittest.TestCase):
 		self.searchSingleParentApi = Data.urls['searchSingleParentApi']
 		self.editParentInfoApi = Data.urls['updateParentInfoApi']
 		self.rs = Login.parent_login(is_force=True)  # parent login and read policy first
-		self.currentParent = ParentService.get_parent_by_id(Data.currentParentId,self.rs)
-		self.currentChild=ChildService.get_child_by_id(Data.currentChildId,self.rs)
+		self.currentParent = ParentService.get_parent_by_id(Data.currentParentId, self.rs)
+		self.currentChild = ChildService.get_child_by_id(Data.currentChildId, self.rs)
 		self.isConfirm = ChildService.is_confirm(self.currentChild)  # check current child is confirmed or not
 
 	def tearDown(self):
@@ -51,6 +51,21 @@ class ParentInfoTest(unittest.TestCase):
 		self.assertTrue(rj == 'success', msg=r.text)
 		pass
 
+	def test_edit_parent_info_with_invalid_param(self):
+		dic = Util.set_object_data_with_each_field_and_post(self.editParentInfoApi, Data.parent_dict, self.rs)
+		for k in dic:
+			self.assertTrue(dic[k]['rj'] == "error", msg=dic[k]['msg'])
+
+	def test_edit_parent_info_with_logic_issue_param(self):
+		# set correct data dic
+		dic = Util.mapping_dict(self.currentParent, Data.parent_dict)
+		# map invalid data
+		for i in Data.invalid_parent_data:
+			dic = Util.mapping_dict(i, dic)
+			r = self.rs.post(self.editParentInfoApi, data=json.dumps(dic))
+			rj = r.json()['status']
+			self.assertTrue(rj == 'error', msg=r.text)
+
 	def test_edit_parent_info(self):
 		json_str = Util.dic_to_json_string(self.currentParent)
 		r = self.rs.post(self.editParentInfoApi, data=json_str)
@@ -59,4 +74,3 @@ class ParentInfoTest(unittest.TestCase):
 		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenEdit'])
 
 		pass;
-

@@ -137,15 +137,13 @@ class ChildrenInfoTest(unittest.TestCase):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.nextStepApi, data=json.dumps({'xsid': i}))
 			rj = r.json()['status']
-			m = r.json()['message']
-			self.assertTrue(rj == "error", msg=m)
+			self.assertTrue(rj == "error", msg=r.text)
 
 	def test_next_step_with_correct_id(self):
 		# xsid=self.currentChild['xsid']
 		r = self.rs.post(self.nextStepApi, data=json.dumps({'xsid': '1'}))
 		rj = r.json()['status']
-		m = r.json()['message']
-		self.assertTrue(rj == "success", msg=m)
+		self.assertTrue(rj == "success", msg=r.text)
 
 
 if __name__ == '__main__':

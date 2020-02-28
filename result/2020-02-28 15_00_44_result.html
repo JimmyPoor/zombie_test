@@ -178,9 +178,9 @@
         
     <div class='page-header'>
         <h1>report</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-02-28 10:29:26</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:48.487038</p>
-<p class='attribute'><strong>状态:</strong> 通过 26 失败 7 错误 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-02-28 15:00:44</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:27.049442</p>
+<p class='attribute'><strong>状态:</strong> 通过 26 失败 10</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'></p></div>
@@ -228,9 +228,9 @@
         失败</a>
     <div id='div_ft1.1' class="popup_window">
         <pre>ft1.1: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_garten_interview.py", line 66, in test_add_interview_data_by_correct_parmas
-    self.assertTrue(rj == 'success', msg=m)
-AssertionError: False is not true : 该小朋友还没有选定对口园
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_garten_interview.py", line 61, in test_add_interview_data_by_correct_parmas
+    self.assertTrue(rj == 'success', msg=r.text)
+AssertionError: False is not true : {"message":"该小朋友还没有选定对口园","status":"error"}
 </pre>
     </div>
     <!--css div popup end-->
@@ -255,9 +255,9 @@ AssertionError: False is not true : 该小朋友还没有选定对口园
         失败</a>
     <div id='div_ft1.4' class="popup_window">
         <pre>ft1.4: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_garten_interview.py", line 80, in test_child_registration_confirm_by_correct_child_id
-    self.assertTrue(rj == 'success', msg=m)
-AssertionError: False is not true : 更新时间不能为空
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_garten_interview.py", line 73, in test_child_registration_confirm_by_correct_child_id
+    self.assertTrue(rj == 'success', msg=r.text)
+AssertionError: False is not true : {"message":"更新时间不能为空","status":"error"}
 </pre>
     </div>
     <!--css div popup end-->
@@ -282,9 +282,9 @@ AssertionError: False is not true : 更新时间不能为空
         失败</a>
     <div id='div_ft1.7' class="popup_window">
         <pre>ft1.7: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_garten_interview.py", line 38, in test_garten_interview_date_list_by_invalid_child_id
-    self.assertTrue(rj == 'error', msg=m)
-AssertionError: False is not true : 查询成功
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_garten_interview.py", line 37, in test_garten_interview_date_list_by_invalid_child_id
+    self.assertTrue(rj == 'error', msg=r.text)
+AssertionError: False is not true : {"data":[],"message":"查询成功","status":"success"}
 </pre>
     </div>
     <!--css div popup end-->
@@ -348,7 +348,7 @@ AssertionError: False is not true : 查询成功
         失败</a>
     <div id='div_ft2.9' class="popup_window">
         <pre>ft2.9: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_children_info.py", line 36, in test_get_child_list_by_invalid_family_id
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_info.py", line 36, in test_get_child_list_by_invalid_family_id
     self.assertTrue(rj == 'error', msg=m)
 AssertionError: False is not true : 查询成功
 </pre>
@@ -367,18 +367,30 @@ AssertionError: False is not true : 查询成功
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-    <tr class='passClass'>
+    <tr class='failClass'>
         <td>case.case_children_registration.ChildRegistrationTest</td>
+        <td>7</td>
         <td>5</td>
-        <td>5</td>
+        <td>2</td>
         <td>0</td>
-        <td>0</td>
-        <td><a href="javascript:showClassDetail('c3',5)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c3',7)">详情</a></td>
     </tr>
 
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_child_registration_with_correct_params</div></td>
-    <td colspan='5' align='center'>通过</td>
+<tr id='ft3.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_child_registration_with_correct_params</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        失败</a>
+    <div id='div_ft3.1' class="popup_window">
+        <pre>ft3.1: Traceback (most recent call last):
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_registration.py", line 68, in test_child_registration_with_correct_params
+    self.assertTrue(rj=='success',msg=r.text)
+AssertionError: False is not true : {"message":"com.alibaba.fastjson.JSONObject cannot be cast to java.lang.String","status":"error"}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
 </tr>
 
 <tr id='pt3.2' class='hiddenRow'>
@@ -396,8 +408,30 @@ AssertionError: False is not true : 查询成功
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='pt3.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_garten_list_by_invalid_type</div></td>
+<tr id='ft3.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_garten_list_by_invalid_type</div></td>
+    <td colspan='5' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.5')" >
+        失败</a>
+    <div id='div_ft3.5' class="popup_window">
+        <pre>ft3.5: Traceback (most recent call last):
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_children_registration.py", line 44, in test_garten_list_by_invalid_type
+    self.assertTrue(rj == 'error', msg=r.text)
+AssertionError: False is not true : {"data":[],"message":"查询成功","status":"success"}
+</pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search_registraion_info_with_correct_params</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt3.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search_registraion_info_with_invalid_params</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
@@ -418,7 +452,7 @@ AssertionError: False is not true : 查询成功
         失败</a>
     <div id='div_ft4.1' class="popup_window">
         <pre>ft4.1: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_login.py", line 36, in test_child_login_with_correct_account
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_login.py", line 35, in test_child_login_with_correct_account
     self.assertTrue(rd == 'error')
 AssertionError: False is not true
 </pre>
@@ -442,12 +476,12 @@ AssertionError: False is not true
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-    <tr class='errorClass'>
+    <tr class='failClass'>
         <td>case.case_parent_info.ParentInfoTest</td>
         <td>7</td>
         <td>4</td>
-        <td>2</td>
-        <td>1</td>
+        <td>3</td>
+        <td>0</td>
         <td><a href="javascript:showClassDetail('c5',7)">详情</a></td>
     </tr>
 
@@ -464,7 +498,7 @@ AssertionError: False is not true
         失败</a>
     <div id='div_ft5.2' class="popup_window">
         <pre>ft5.2: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_parent_info.py", line 57, in test_edit_parent_info_with_invalid_param
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_parent_info.py", line 57, in test_edit_parent_info_with_invalid_param
     self.assertTrue(dic[k]['rj'] == "error", msg=dic[k]['msg'])
 AssertionError: False is not true : property:id  message:操作成功
 </pre>
@@ -474,24 +508,16 @@ AssertionError: False is not true : property:id  message:操作成功
 </tr>
 
 <tr id='ft5.3' class='none'>
-    <td class='errorCase'><div class='testcase'>test_edit_parent_info_with_logic_issue_param</div></td>
+    <td class='failCase'><div class='testcase'>test_edit_parent_info_with_logic_issue_param</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.3')" >
-        错误</a>
+        失败</a>
     <div id='div_ft5.3' class="popup_window">
         <pre>ft5.3: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_parent_info.py", line 65, in test_edit_parent_info_with_logic_issue_param
-    r = self.rs.post(self.editParentInfoApi, data=json.dumps(dic))
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 231, in dumps
-    return _default_encoder.encode(obj)
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 199, in encode
-    chunks = self.iterencode(o, _one_shot=True)
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 257, in iterencode
-    return _iterencode(o, 0)
-  File "C:\Users\JimmyPoor\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 180, in default
-    o.__class__.__name__)
-TypeError: Object of type 'Enums_SHANGHAI' is not JSON serializable
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_parent_info.py", line 67, in test_edit_parent_info_with_logic_issue_param
+    self.assertTrue(rj == 'error', msg=r.text)
+AssertionError: False is not true : {"message":"操作成功","status":"success"}
 </pre>
     </div>
     <!--css div popup end-->
@@ -511,7 +537,7 @@ TypeError: Object of type 'Enums_SHANGHAI' is not JSON serializable
         失败</a>
     <div id='div_ft5.5' class="popup_window">
         <pre>ft5.5: Traceback (most recent call last):
-  File "C:\project\教软公司项目\浦东幼儿园\kindergarten_pudong\kindergarten_pudong\case\case_parent_info.py", line 45, in test_search_parent_list_by_invalid_child_Id
+  File "E:\projects\Python\test\kindergarten_pudong\case\case_parent_info.py", line 45, in test_search_parent_list_by_invalid_child_Id
     self.assertTrue(rj == 'error', msg=r.text)
 AssertionError: False is not true : {"data":[],"message":"查询成功","status":"success"}
 </pre>
@@ -532,10 +558,10 @@ AssertionError: False is not true : {"data":[],"message":"查询成功","status"
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>34</td>
+            <td>36</td>
             <td>26</td>
-            <td>7</td>
-            <td>1</td>
+            <td>10</td>
+            <td>0</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -569,8 +595,8 @@ AssertionError: False is not true : {"data":[],"message":"查询成功","status"
                     center: ['50%', '60%'],
                     data:[
                         {value:26, name:'通过'},
-                        {value:7, name:'失败'},
-                        {value:1, name:'错误'}
+                        {value:10, name:'失败'},
+                        {value:0, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {

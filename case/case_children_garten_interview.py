@@ -34,50 +34,43 @@ class KindergartenInterviewTest(unittest.TestCase):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.gardenInterviewDateListApi, data=json.dumps({'id': i}))
 			rj = r.json()['status']
-			m = r.json()['message']
-			self.assertTrue(rj == 'error', msg=m)
+			self.assertTrue(rj == 'error', msg=r.text)
 
 	def test_garten_interview_date_list_by_correct_child_id(self):
 		r = self.rs.post(self.gardenInterviewDateListApi, data=json.dumps({'id': Data.currentChildId}))
 		rj = r.json()['status']
-		m = r.json()['message']
-		self.assertTrue(rj == 'success', msg=m)
+		self.assertTrue(rj == 'success', msg=r.text)
 
 	def test_add_interview_date_by_invalid_id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.addInterviewDateApi, data=json.dumps({'id': i}))
 			rj = r.json()['status']
-			m = r.json()['message']
-			self.assertTrue(rj == 'error', msg=m)
+			self.assertTrue(rj == 'error', msg=r.text)
 
 	def test_add_interview_date_by_invalid_yysjid(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.addInterviewDateApi, data=json.dumps({'id': Data.currentChildId, 'yysjid': i}))
 			rj = r.json()['status']
-			m = r.json()['message']
-			self.assertTrue(rj == 'error', msg=m)
+			self.assertTrue(rj == 'error', msg=r.text)
 
 	def test_add_interview_data_by_correct_parmas(self):
 		# TODO: get randmon yysjid(预约时间项id) first and try request by this yysjid
 		# yysjid=self.currentChild.yysjid
-		r = self.rs.post(self.addInterviewDateApi, data=json.dumps({'id': Data.currentChildId, 'yysjid': "1"}))
+		r = self.rs.post(self.addInterviewDateApi, data=json.dumps({'id': Data.hasRegistChildId, 'yysjid': "1"}))
 		rj = r.json()['status']
-		m = r.json()['message']
-		self.assertTrue(rj == 'success', msg=m)
+		self.assertTrue(rj == 'success', msg=r.text)
 		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenInterview'])
 
 	def test_child_registration_confirm_by_invalid_id(self):
 		for i in Data.incorrectTextValues:
 			r = self.rs.post(self.childRgistryInfoConfirmApi, data=json.dumps({'id': i}))
 			rj = r.json()['status']
-			m = r.json()['message']
-			self.assertTrue(rj == 'error', msg=m)
+			self.assertTrue(rj == 'error', msg=r.text)
 
 	def test_child_registration_confirm_by_correct_child_id(self):
 		r = self.rs.post(self.childRgistryInfoConfirmApi, data=json.dumps({'id': Data.currentChildId}))
 		rj = r.json()['status']
-		m = r.json()['message']
-		self.assertTrue(rj == 'success', msg=m)
+		self.assertTrue(rj == 'success', msg=r.text)
 		self.assertFalse(self.isRegistered, msg=Data.messages['forbiddenRegistration'])  # child must been registered
 		self.assertFalse(self.isConfirm, msg=Data.messages['forbiddenEdit'])  # child cannot been confirmed
 

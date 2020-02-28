@@ -51,7 +51,7 @@ class Data:
 		'addInterviewDateApi': __host + __addInterviewDateApi,
 		'childRgistryInfoConfirmApi': __host + __childRegistryInfoConfirmApi,
 		'exportToPDFApi': __host + __exportToPDFApi,
-		'registrationInfoApi': __host + __readPolicyApi
+		'registrationInfoApi': __host + __registrationInfoApi
 	}
 
 	incorrectTextValues = ['', r'/[`~!@#$%^&*()_+<>?:"{},.\/;', r'/[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im',
@@ -67,6 +67,7 @@ class Data:
 
 	currentGartenId = '1'
 	currentChildId = '2'
+	hasRegistChildId='4'
 	currentParentId = '1'
 	currentLoginMobile = '15871153617'
 	currentCode = '88888888'
@@ -93,6 +94,23 @@ class Data:
 				   'hks': '', 'jzzyxq': '', 'hjxxdz': '',
 				   'sfbzf': '', 'jzzhm': '', 'jzzjfsfdb': '', 'hksf': '', 'qx': '', 'xb': '', 'studentid': '', 'xl': '',
 				   'xm': '', 'gzdw': '', 'impno': '', 'jzzlx': '', 'jydjcs': '', 'hjdzjwhc': ''}
+
+	garten_info_dict = {
+		"jwdm": "15004001",
+		"updateuserid": "",
+		"schoolcode": "",
+		"deletedtime": "",
+		"schoolname": "",
+		"dkxxdm": "1101701",
+		"jddm": "15004",
+		"jwmc": "潍坊一村居委",
+		"deleteduserid": "",
+		"deleted": "0",
+		"addtime": "",
+		"adduserid": "",
+		"id": "4fad1b88-52cb-11ea-8b0b-0242ac110002",
+		"updatetime": ""
+	}
 
 	registration_info_dict = {'id': '', 'msg': '', 'bmxx': '', 'bh': '', 'bmsj': '', 'mssj': '', 'schoolname': '',
 							  'msjg': '', 'bmbj': ''}

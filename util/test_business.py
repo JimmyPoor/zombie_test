@@ -10,6 +10,7 @@
 import json
 import requests
 import time
+import functools
 
 from util.test_data import Data, Enums_SHANGHAI
 
@@ -60,20 +61,24 @@ class ChildService:
 	def get_child_by_id(child_id, session):
 		if Data.currentChild is None:
 			r = session.post(Data.urls['searchChildInfoApi'], data=json.dumps({'id': child_id}))
-			Data.currentChild = r.json()['data']
+			if 'data' in r.json():
+				Data.currentChild = r.json()['data']
 		return Data.currentChild
 
 	@staticmethod
 	def get_garten_type(child, session):
-		hk_is_shanghai = child['hkcity'] == Enums_SHANGHAI.上海市
-		if hk_is_shanghai:
-			return '1'
-		else:
-			return '2'
+		if child != '' and 'hkcity' in child:
+			hk_is_shanghai = child['hkcity'] == Enums_SHANGHAI.上海市
+			if hk_is_shanghai:
+				return '1'
+			else:
+				return '2'
+
+		return None
 
 	@staticmethod
 	def is_confirm(child):
-		return child['confirmstatus'] == '1'
+		return child != '' and child['confirmstatus'] == '1'
 
 	@staticmethod
 	def is_registered(child_id, session):
@@ -108,12 +113,23 @@ class Util:
 
 	@staticmethod
 	def is_match(source, target):
-		result=True
+		result = True
 		for k in source:
 			if k not in target:
 				result = False
+			else:
+				print(k)
 		return result
 
 	@staticmethod
 	def dic_to_json_string(dic):
 		return json.dumps(dic, ensure_ascii=False).encode('utf-8')  # fix chinese char issue
+
+
+def check_obj_is_null(obj):
+	def decorator(func):
+		@functools.wraps(func)
+		def wrapper(*args, **kwargs):
+			if obj is None:
+				return None;
+			return func(*args, **kwargs)

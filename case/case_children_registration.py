@@ -59,13 +59,21 @@ class ChildRegistrationTest(unittest.TestCase):
 			r = self.rs.post(self.childRegistrationAPI, data=json.dumps({'bmid': i, 'fplx': i, 'bmxx': i}))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
+
+		for i in Data.invalid_child_registration_data:
+			r = self.rs.post(self.childRegistrationAPI, data=json.dumps(i))
+			rj = r.json()['status']
+			self.assertTrue(rj == 'error', msg=r.text)
+
 		pass
 
 	def test_child_registration_with_correct_params(self):
-		r = self.rs.post(self.childRegistrationAPI, data=json.dumps({'bmid': Data.hasRegistChildId, 'fplx': self.gartenTypeId, 'bmxx': Data.currentGartenId}))
+		r = self.rs.post(self.childRegistrationAPI, data=json.dumps(
+			{'bmid': Data.hasRegistChildId, 'fplx': self.gartenTypeId, 'bmxx': Data.currentGartenId}))
 		rj = r.json()['status']
 		self.assertTrue(rj == 'success', msg=r.text)
-		self.assertFalse(self.isRegistered, msg=Data.messages['forbiddenRegistration'])  # TODO: child cannot been registered
+		self.assertFalse(self.isRegistered,
+						 msg=Data.messages['forbiddenRegistration'])  # TODO: child cannot been registered
 		self.assertFalse(self.isConfirm, msg=Data.messages['forbiddenEdit'])  # child cannot been confirmed
 
 	def test_search_registraion_info_with_invalid_params(self):
@@ -76,7 +84,7 @@ class ChildRegistrationTest(unittest.TestCase):
 		rj = r.json()['status']
 		dic = r.json()['data']
 		if dic is not None:
-			self.assertTrue(Util.is_match(Data.registration_info_dict, dic))
+			self.assertTrue(Util.is_match( Data.registration_info_dict,dic))
 
 		self.assertTrue(rj == 'success', msg=r.text)
 		self.assertTrue(self.isConfirm is not True, msg=Data.messages['forbiddenEdit'])

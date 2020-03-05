@@ -68,7 +68,7 @@ class KindergartenInterviewTest(unittest.TestCase):
 			self.assertTrue(rj == 'error', msg=r.text)
 
 	def test_child_registration_confirm_by_correct_child_id(self):
-		r = self.rs.post(self.childRgistryInfoConfirmApi, data=json.dumps({'id': Data.currentChildId}))
+		r = self.rs.post(self.childRgistryInfoConfirmApi, data=json.dumps({'id': Data.currentChildId, 'updatetime': Data.currentUpdateDate}))
 		rj = r.json()['status']
 		self.assertTrue(rj == 'success', msg=r.text)
 		self.assertFalse(self.isRegistered, msg=Data.messages['forbiddenRegistration'])  # child must been registered

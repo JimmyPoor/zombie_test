@@ -65,10 +65,11 @@ class Data:
 
 	# initial data
 
-	currentGartenId = '1'
-	currentChildId = '2'
-	hasRegistChildId='4'
-	currentParentId = '1'
+	currentUpdateDate = '2020-02-01 12:00:00'
+	currentGartenId = '1101701'
+	currentChildId = '8'
+	hasRegistChildId = '4'
+	currentParentId = '24191a4a-4a3d-4abd-bf71-00d148974097'
 	currentLoginMobile = '15871153617'
 	currentCode = '88888888'
 	currentChild = None
@@ -112,12 +113,14 @@ class Data:
 		"updatetime": ""
 	}
 
-	registration_info_dict = {'id': '', 'msg': '', 'bmxx': '', 'bh': '', 'bmsj': '', 'mssj': '', 'schoolname': '',
+	registration_info_dict = {'id': '', 'bmxx': '', 'bh': '', 'bmsj': '', 'mssj': '', 'schoolname': '', 'fplx': '',
+							  'bmqx': '', 'updatetime': '', 'hjxx': '', 'bmid': '',
 							  'msjg': '', 'bmbj': ''}
 
-	# invalid logic data
+	# -------------------------------------------- invalid logic data ---------------------------------------------------
 
 	invalidDateList = ['1111-11-11', '9999-11-11']
+
 	invalid_child_data_in_step1 = [
 		{'csrq': '2010-01-01', 'xb': Enums_XB.女.value, 'sfzjh': '420222200506193716', 'jg': Enums_SHANGHAI.上海市.value},
 		# 身份证和一些相关字段
@@ -139,3 +142,5 @@ class Data:
 	invalid_child_data_in_step4 = [{'sflqcjz': '0', 'cjlb': Enums_CJLB.综合残疾.value}]
 	invalid_parent_data = [{'hksf': Enums_OTHER_CITY.河北省.value, 'hks': Enums_SHANGHAI.上海市.value},
 						   {'zjhm': '310115198210191992', 'jzzlx': Enums_JZZLX.上海市居住登记凭证.value}]
+
+	invalid_child_registration_data = [{'bmid': '1', 'fplx': '1', 'bmxx': '3323232323232323'}]  # 不存在的园所

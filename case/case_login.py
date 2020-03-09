@@ -8,7 +8,6 @@ from util.test_data import Data
 
 class LoginTest(unittest.TestCase):
 
-
 	def setUp(self):
 		self.loginApi = Data.urls['loginApi']
 		self.codeApi = Data.urls['codeApi']

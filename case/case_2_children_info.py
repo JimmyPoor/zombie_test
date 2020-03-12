@@ -60,13 +60,13 @@ class ChildrenInfoTest(unittest.TestCase):
 	# 	for k, v in dic:
 	# 		self.assertTrue(v.rj == "error", msg=v.msg)
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_edit_child_info_step_1_with_logic_issue_param(self):
 		# set correct data dic
 		dic = Util.mapping_dict(self.currentChild, Data.child_step1_dict)
 		for i in Data.invalid_child_data_in_step1:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
+			r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 
@@ -77,14 +77,14 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.assertTrue(rj == 'success', msg=r.text)
 		pass
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_edit_child_info_step_2_with_logic_issue_param(self):
 		# set correct data dic
 		dic = Util.mapping_dict(self.currentChild, Data.child_step2_dict)
 		# map invalid data
 		for i in Data.invalid_child_data_in_step2:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
+			r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 
@@ -95,14 +95,14 @@ class ChildrenInfoTest(unittest.TestCase):
 		self.assertTrue(rj == 'success', msg=r.text)
 		pass
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_edit_child_info_step_3_with_logic_issue_param(self):
 		# set correct data dic
 		dic = Util.mapping_dict(self.currentChild, Data.child_step3_dict)
 		# map invalid data
 		for i in Data.invalid_child_data_in_step3:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
+			r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 
@@ -112,14 +112,14 @@ class ChildrenInfoTest(unittest.TestCase):
 		rj = r.json()['status']
 		self.assertTrue(rj == 'success', msg=r.text)
 
-	@unittest.skip('todo')
+	#@unittest.skip('todo')
 	def test_edit_child_info_step_4_with_logic_issue_param(self):
 		# set correct data dic
 		dic = Util.mapping_dict(self.currentChild, Data.child_step4_dict)
 		# map invalid data
 		for i in Data.invalid_child_data_in_step4:
 			dic = Util.mapping_dict(i, dic)
-			r = self.rs.post(self.searchChildInfoApi, data=json.dumps(dic))
+			r = self.rs.post(self.editChildInfoApi, data=json.dumps(dic))
 			rj = r.json()['status']
 			self.assertTrue(rj == 'error', msg=r.text)
 

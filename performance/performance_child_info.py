@@ -3,7 +3,7 @@
 # ====#====#====#====
 # __author__ = "Huachao"
 # FileName: performance_child_info.py
-# Version:1.0.0
+# # Version:1.0.0
 # ====#====#====#====
 import json
 import os
@@ -28,7 +28,7 @@ class PerformanceChildInfoTest(TaskSet):
 		invoke before each task start to working,
 		:return:
 		"""
-		self.searchChildInfoApi = Data.urls['searchChildInfoApi']
+		self.searchChildInfoApi = Data.urls['index']
 		self.session = HttpSession(Data.urls['host'])
 		self.rs=Login.parent_login(True, self.session)
 
@@ -41,9 +41,11 @@ class PerformanceChildInfoTest(TaskSet):
 
 	@task
 	def performance_get_child_info(self):
-		res = self.rs.post(self.searchChildInfoApi,
-								data=json.dumps({'id': Data.currentChildId}))
-		print(res.json()['message'])
+		# res = self.rs.post(self.searchChildInfoApi,
+		# 						data=json.dumps({'id': Data.currentChildId}))
+		r=self.rs.get(self.searchChildInfoApi,verify = False)
+		print(r)
+		#print(res.json()['message'])
 
 
 

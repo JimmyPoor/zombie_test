@@ -6,9 +6,12 @@
 """
 from util.test_enums import *
 
+TEST_HOST='http://101.226.168.97:8080'
+PRODUCT_HOST='https://xqzs.pdedu.sh.cn'
 
 class Data:
-	__host = 'http://10.4.4.5:9999'
+	__host = PRODUCT_HOST
+	__index='/#/faq/list'
 	__loginApi = '/pdyeyzs/pdyeyzs/family/familyLogin'
 	__codeApi = '/pdyeyzs/pdyeyzs/sms/sendShortMessage'
 	__nextStepApi = '/pdyeyzs/pdyeyzs/student/getNext'
@@ -34,6 +37,8 @@ class Data:
 		super().__init__()
 
 	urls = {
+		'host': __host,
+		'index':__host + __index,
 		'loginApi': __host + __loginApi,
 		'codeApi': __host + __codeApi,
 		'nextStepApi': __host + __nextStepApi,
@@ -60,15 +65,15 @@ class Data:
 	messages = {'forbiddenEdit': 'can not edit after info has been confirmed',
 				'forbiddenInterview': 'can not add interview due to child info has been confirmed',
 				'forbiddenRegistration': "this child has been registered",
-				'forbiddenConfirm': ' child info hass been confirmed'
+				'forbiddenConfirm': ' child info hass been confirmed',
+				'GartenNotExits': 'garten not exits',
+				'InterviewDateNotExists':' interview date not exists'
 				}
 
 	# initial data
 
-	currentUpdateDate = '2020-02-01 12:00:00'
-	currentGartenId = '1101701'
-	currentChildId = '8'
-	hasRegistChildId = '4'
+	currentUpdateDate = '2020-03-11 12:00:00'
+	currentChildId = '5'
 	currentParentId = '24191a4a-4a3d-4abd-bf71-00d148974097'
 	currentLoginMobile = '15871153617'
 	currentCode = '88888888'
@@ -128,7 +133,7 @@ class Data:
 	]
 
 	invalid_child_data_in_step2 = [{'hkxz': Enums_HKXZ.其他户口.value, 'fnhklx': Enums_FNHKLX.县城.value},
-								   {'hksf': Enums_OTHER_CITY.河北省, 'hkcity': Enums_SHANGHAI.上海市.value,
+								   {'hksf': Enums_OTHER_CITY.河北省.value, 'hkcity': Enums_SHANGHAI.上海市.value,
 									'hkqx': Enums_SHANGHAI.徐汇区.value, 'hkjz': Enums_SHANGHAI.华泾镇.value,
 									'hkjwh': Enums_SHANGHAI.华建居委.value},
 								   {'wsshkdz': incorrectTextValues[1]}

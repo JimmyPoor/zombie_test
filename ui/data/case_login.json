@@ -1,0 +1,35 @@
+{
+  "id": "case_login_001",
+  "case": [
+    {
+      "key": "mobile",
+      "searchBy": "id",
+      "acton": "send-keys",
+      "isRequired": true,
+      "desc" : ""
+    },
+    {
+      "key": "code",
+      "searchBy": "id",
+      "acton": "send-keys",
+      "isRequired": true,
+      "desc" : ""
+    },
+     {
+      "key": "my-btn",
+      "searchBy": "class name",
+      "acton": "click",
+      "isRequired": false,
+      "desc" : ""
+    }
+  ],
+  "_comments": "",
+  "result": [
+    {
+      "key": "mobile cannot be null or empty",
+      "searchBy": "XPATH",
+      "xpath": "",
+      "desc": ""
+    }
+  ]
+}

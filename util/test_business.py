@@ -19,19 +19,34 @@ class Login():
 	s = None
 
 	@staticmethod
-	def parent_login(is_force=False):
-		if Login.s is None or is_force:
-			Login.s = requests.session()
-			r = Login.s.post(Data.urls['loginApi'], data=json.dumps({'mobile': '15871153617', 'code': '88888888'}))
-			m = (r.json()['message'])
+	def parent_login(is_force=False, session=None):
+		r""" parent login by two steps
+		1: login by mobile
+		2: read policy
 
-			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '1'}, ))
-			m2 = (r.json()['message'])
+		:param is_force: always login when invoked
+		:param session:external session
+		:return: current session
+		"""
+		if Login.s is None or is_force:
+			if (session is None):
+				Login.s = requests.session()
+			else:
+				Login.s = session
+
+			#session.session.keep_alive =False
+
+			r = Login.s.post(Data.urls['loginApi'],
+							 data=json.dumps({'mobile': Data.currentLoginMobile, 'code': Data.currentCode}),verify=False)
+			#m = (r.json()['message'])
+
+			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '1'} ),verify=False)
+			#m2 = (r.json()['message'])
 
 			time.sleep(3)
 
-			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '2'}, ))
-			m3 = (r.json()['message'])
+			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '2'}, ),verify=False)
+			#m3 = (r.json()['message'])
 
 		return Login.s
 
@@ -78,14 +93,31 @@ class ChildService:
 
 	@staticmethod
 	def is_confirm(child):
-		return child != '' and child['confirmstatus'] == '1'
+		return child is not None and child['confirmstatus'] == '1'
 
 	@staticmethod
 	def is_registered(child_id, session):
 		result = False
-		garten_id = None
-		return result is True and garten_id is not None
+		return result is True and child_id is not None
 
+	@staticmethod
+	def get_garten_by_child_id(child_id, garten_type_id,session):
+		r = session.post( Data.urls['searchKinderGardenByJWApi'],
+						 data=json.dumps({'id': Data.currentChildId,'type':garten_type_id}))  # TODO:'type': self.gartenTypeId}))
+		if 'data' in r.json():
+			data = r.json()['data']
+			if len(data)>0:
+				return data[0]
+		return None;
+
+	@staticmethod
+	def get_child_interview_date(child_id, session):
+		r = session.post(Data.urls['gardenInterviewDateListApi'], data=json.dumps({'id': Data.currentChildId}))
+		if 'data' in r.json():
+			data = r.json()['data']
+			if len(data) > 0:
+				return data[0]
+		return None
 
 class Util:
 	@staticmethod
@@ -125,11 +157,15 @@ class Util:
 	def dic_to_json_string(dic):
 		return json.dumps(dic, ensure_ascii=False).encode('utf-8')  # fix chinese char issue
 
+	@staticmethod
+	def dic_is_empty(dic):
+		return dic is None or len(dic)==0
 
-def check_obj_is_null(obj):
-	def decorator(func):
-		@functools.wraps(func)
-		def wrapper(*args, **kwargs):
-			if obj is None:
-				return None;
-			return func(*args, **kwargs)
+
+# def check_obj_is_null(obj):
+# 	def decorator(func):
+# 		@functools.wraps(func)
+# 		def wrapper(*args, **kwargs):
+# 			if obj is None:
+# 				return None;
+# 			return func(*args, **kwargs)

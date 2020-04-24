@@ -34,19 +34,20 @@ class Login():
 			else:
 				Login.s = session
 
-			#session.session.keep_alive =False
+			# session.session.keep_alive =False
 
 			r = Login.s.post(Data.urls['loginApi'],
-							 data=json.dumps({'mobile': Data.currentLoginMobile, 'code': Data.currentCode}),verify=False)
-			#m = (r.json()['message'])
+							 data=json.dumps({'mobile': Data.currentLoginMobile, 'code': Data.currentCode}),
+							 verify=False)
+			# m = (r.json()['message'])
 
-			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '1'} ),verify=False)
-			#m2 = (r.json()['message'])
+			#r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '1'}), verify=False)
+			# m2 = (r.json()['message'])
 
-			time.sleep(3)
+			#time.sleep(3)
 
-			r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '2'}, ),verify=False)
-			#m3 = (r.json()['message'])
+			#r = Login.s.post(Data.urls['readPolicyApi'], data=json.dumps({'id': '1', 'type': '2'}, ), verify=False)
+		# m3 = (r.json()['message'])
 
 		return Login.s
 
@@ -101,12 +102,13 @@ class ChildService:
 		return result is True and child_id is not None
 
 	@staticmethod
-	def get_garten_by_child_id(child_id, garten_type_id,session):
-		r = session.post( Data.urls['searchKinderGardenByJWApi'],
-						 data=json.dumps({'id': Data.currentChildId,'type':garten_type_id}))  # TODO:'type': self.gartenTypeId}))
+	def get_garten_by_child_id(child_id, garten_type_id, session):
+		r = session.post(Data.urls['searchKinderGardenByJWApi'],
+						 data=json.dumps(
+							 {'id': Data.currentChildId, 'type': garten_type_id}))  # TODO:'type': self.gartenTypeId}))
 		if 'data' in r.json():
 			data = r.json()['data']
-			if len(data)>0:
+			if len(data) > 0:
 				return data[0]
 		return None;
 
@@ -118,6 +120,7 @@ class ChildService:
 			if len(data) > 0:
 				return data[0]
 		return None
+
 
 class Util:
 	@staticmethod
@@ -159,8 +162,7 @@ class Util:
 
 	@staticmethod
 	def dic_is_empty(dic):
-		return dic is None or len(dic)==0
-
+		return dic is None or len(dic) == 0
 
 # def check_obj_is_null(obj):
 # 	def decorator(func):

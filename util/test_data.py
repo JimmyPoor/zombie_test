@@ -6,12 +6,15 @@
 """
 from util.test_enums import *
 
-TEST_HOST='http://101.226.168.97:8080'
-PRODUCT_HOST='https://xqzs.pdedu.sh.cn'
+TEST_HOST = 'http://101.226.168.97:8080'
+PRODUCT_HOST = 'https://xqzs.pdedu.sh.cn'
+
 
 class Data:
 	__host = PRODUCT_HOST
-	__index='/#/faq/list'
+	__index = '/#/faq/list'
+	__policy = '/#/policy'
+	__list = '/#/reservation/children'
 	__loginApi = '/pdyeyzs/pdyeyzs/family/familyLogin'
 	__codeApi = '/pdyeyzs/pdyeyzs/sms/sendShortMessage'
 	__nextStepApi = '/pdyeyzs/pdyeyzs/student/getNext'
@@ -38,7 +41,9 @@ class Data:
 
 	urls = {
 		'host': __host,
-		'index':__host + __index,
+		'index': __host + __index,
+		'policy': __host + __policy,
+		'list': __host + __list,
 		'loginApi': __host + __loginApi,
 		'codeApi': __host + __codeApi,
 		'nextStepApi': __host + __nextStepApi,
@@ -67,7 +72,7 @@ class Data:
 				'forbiddenRegistration': "this child has been registered",
 				'forbiddenConfirm': ' child info hass been confirmed',
 				'GartenNotExits': 'garten not exits',
-				'InterviewDateNotExists':' interview date not exists'
+				'InterviewDateNotExists': ' interview date not exists'
 				}
 
 	# initial data
@@ -76,7 +81,7 @@ class Data:
 	currentChildId = '5'
 	currentParentId = '24191a4a-4a3d-4abd-bf71-00d148974097'
 	currentLoginMobile = '15871153617'
-	currentCode = '88888888'
+	currentCode = 'CS88888888'
 	currentChild = None
 	currentParent = None
 

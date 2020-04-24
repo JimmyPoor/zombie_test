@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36e9e5dd-73aa-4b39-b27b-0a21647f3eca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/start_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/case/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/case/ui_login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/core/data_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/core/page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/core/temp.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/data/case_login.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/data/case_login_data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/drivers/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/page/login_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/case_1_login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/case_2_children_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/case_3_parent_info.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/case_4_children_registration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/case_5_children_garten_interview.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/case_6_notice.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/performance/performance_child_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance/performance_child_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performance/performance_child_info_slave.py" beforeDir="false" afterPath="$PROJECT_DIR$/performance/performance_child_info_slave.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_inter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/test_business.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/test_business.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/test_data.py" afterDir="false" />
     </list>
@@ -55,43 +36,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/performance/performance_child_info_slave.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-              <folding>
-                <element signature="e#173#184#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/test_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/test_business.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-935">
-              <caret line="47" column="113" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="113" />
-              <folding>
-                <element signature="e#166#177#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/performance/performance_child_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="58" />
+            <state relative-caret-position="448">
+              <caret line="58" column="28" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="28" />
               <folding>
                 <element signature="e#175#186#0" expanded="true" />
               </folding>
@@ -100,12 +48,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/performance/performance_login.py">
+        <entry file="file://$PROJECT_DIR$/util/test_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="-199">
+              <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/software/install/vs2017/Shared/Python36_64/Lib/site-packages/locustio-0.13.5-py3.6.egg/locust/clients.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-420">
+              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/test_business.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
               <folding>
-                <element signature="e#173#184#0" expanded="true" />
+                <element signature="e#166#177#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -205,18 +171,18 @@
         <option value="$PROJECT_DIR$/ui/page/login_page.py" />
         <option value="$PROJECT_DIR$/performance/performance_login.py" />
         <option value="$PROJECT_DIR$/performance/performance_child_info_slave2.py" />
-        <option value="$PROJECT_DIR$/performance/performance_child_info.py" />
-        <option value="$PROJECT_DIR$/util/test_business.py" />
-        <option value="$PROJECT_DIR$/util/test_data.py" />
         <option value="$PROJECT_DIR$/performance/performance_child_info_slave.py" />
+        <option value="$PROJECT_DIR$/performance/performance_child_info.py" />
+        <option value="$PROJECT_DIR$/util/test_data.py" />
+        <option value="$PROJECT_DIR$/util/test_business.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="430" />
-    <option name="y" value="36" />
-    <option name="width" value="1667" />
-    <option name="height" value="1334" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="110" />
+    <option name="y" value="45" />
+    <option name="width" value="1588" />
+    <option name="height" value="951" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -226,7 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,6 +228,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,7 +264,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.performance_child_info_slave">
+  <component name="RunManager" selected="Python.performance_child_info">
     <configuration name="case_1_login" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="kindergarten_pudong" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -328,7 +294,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\project\python\pyCharm\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="E:\projects\Python\helloworld\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/performance" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -350,9 +316,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="E:\projects\Python\helloworld\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/performance" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -418,8 +384,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.performance_child_info_slave" />
         <item itemvalue="Python.performance_child_info" />
+        <item itemvalue="Python.performance_child_info_slave" />
         <item itemvalue="Python.start_ui" />
         <item itemvalue="Python.start_inter" />
         <item itemvalue="Python.case_1_login" />
@@ -489,11 +455,13 @@
       <workItem from="1584341207709" duration="50000" />
       <workItem from="1587106346777" duration="14751000" />
       <workItem from="1587181092115" duration="16306000" />
+      <workItem from="1587460334244" duration="1089000" />
+      <workItem from="1587608205911" duration="10871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275913000" />
+    <option name="totallyTimeSpent" value="287873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -505,29 +473,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="3456" height="1416" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" weight="0.07342875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24970761" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285953" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.9085252" weight="0.2825" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49558303" weight="0.50780034" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.9071505" weight="0.32135075" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49519745" weight="0.24477245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32861897" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49968886" weight="0.32833335" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50441694" side_tool="true" visible="true" weight="0.21450858" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.91372204" weight="0.21450858" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.09284952" side_tool="true" weight="0.45751634" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.9124867" weight="0.21350762" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49968886" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info anchor="right" id="Database" order="1" weight="0.32981315" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="5" visible="true" weight="0.102179036" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="5" visible="true" weight="0.18943436" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -591,17 +560,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/performance/performance_child_info.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/performance/performance_child_info.py</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/performance/performance_child_info.py</url>
-          <line>13</line>
+          <line>14</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
@@ -655,15 +619,15 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$case_1_login.coverage" NAME="case_1_login Coverage Results" MODIFIED="1587132772298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$ui_login.coverage" NAME="ui_login Coverage Results" MODIFIED="1584192870081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/case" />
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$start_ui.coverage" NAME="start_ui Coverage Results" MODIFIED="1587135262905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$start.coverage" NAME="start Coverage Results" MODIFIED="1584191666945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$performance_child_info.coverage" NAME="performance_child_info Coverage Results" MODIFIED="1587181706443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/performance" />
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$start_inter.coverage" NAME="start_inter Coverage Results" MODIFIED="1587132827503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$login_page.coverage" NAME="login_page Coverage Results" MODIFIED="1584191723760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/page" />
-    <SUITE FILE_PATH="coverage/kindergarten_pudong$performance_child_info_slave.coverage" NAME="performance_child_info_slave Coverage Results" MODIFIED="1587217353258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/performance" />
     <SUITE FILE_PATH="coverage/kindergarten_pudong$case_login.coverage" NAME="case_login Coverage Results" MODIFIED="1583932713823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$ui_login.coverage" NAME="ui_login Coverage Results" MODIFIED="1584192870081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/case" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$case_1_login.coverage" NAME="case_1_login Coverage Results" MODIFIED="1587132772298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$start.coverage" NAME="start Coverage Results" MODIFIED="1584191666945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$performance_child_info_slave.coverage" NAME="performance_child_info_slave Coverage Results" MODIFIED="1587217353258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/performance" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$login_page.coverage" NAME="login_page Coverage Results" MODIFIED="1584191723760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/page" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$performance_child_info.coverage" NAME="performance_child_info Coverage Results" MODIFIED="1587713492038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/performance" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$start_ui.coverage" NAME="start_ui Coverage Results" MODIFIED="1587135262905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kindergarten_pudong$start_inter.coverage" NAME="start_inter Coverage Results" MODIFIED="1587132827503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -675,25 +639,11 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docker/requirements" />
-    <entry file="file://$PROJECT_DIR$/Dockerfile_locust" />
     <entry file="file://$PROJECT_DIR$/result/2020-03-09 16_39_16_result.html" />
     <entry file="file://$PROJECT_DIR$/result/2020-03-09 17_10_41_result.html" />
-    <entry file="file://$PROJECT_DIR$/../../../../python/pyCharm/venv/Lib/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="896" selection-start-line="896" selection-end-line="896" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://E:/python/pyCharm/venv/Lib/site-packages/requests/models.py" />
     <entry file="file://$PROJECT_DIR$/result/2020-03-10 20_42_29_result.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="884" column="36" selection-start-line="884" selection-start-column="36" selection-end-line="884" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/requests/models.py" />
     <entry file="file://$PROJECT_DIR$/case/case_6_notice.py" />
     <entry file="file://$PROJECT_DIR$/case/case_4_children_registration.py" />
     <entry file="file://$PROJECT_DIR$/Dockerfile">
@@ -729,13 +679,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/support/expected_conditions.py" />
     <entry file="file://$PROJECT_DIR$/ui/core/temp.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -743,13 +687,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/remote/webelement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/remote/webelement.py" />
     <entry file="file://$PROJECT_DIR$/interface/case_6_notice.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -762,41 +700,10 @@
         <state relative-caret-position="-905" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/common/by.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/data/case_login_data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/1223272643/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="5249" column="8" selection-start-line="5249" selection-start-column="8" selection-end-line="5249" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/1223272643/time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="138" column="4" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1416">
-          <caret line="953" column="8" selection-start-line="953" selection-start-column="8" selection-end-line="953" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/common/by.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/1223272643/builtins.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/1223272643/time.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
     <entry file="file://$PROJECT_DIR$/interface/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -847,13 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/data/case_login.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interface/case_2_children_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -861,23 +761,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/locust/contrib/fasthttp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="160" column="31" lean-forward="true" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/locust/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/locust/contrib/fasthttp.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/locust/core.py" />
     <entry file="file://$PROJECT_DIR$/interface/case_3_parent_info.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -911,63 +796,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/locust/clients.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/performance/performance_child_info_slave2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/locust/clients.py" />
+    <entry file="file://$PROJECT_DIR$/performance/performance_child_info_slave2.py" />
     <entry file="file://$PROJECT_DIR$/performance/performance_login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="384">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding>
             <element signature="e#173#184#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/performance/performance_child_info.py">
+    <entry file="file://$PROJECT_DIR$/ui/data/case_login.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="58" />
-          <folding>
-            <element signature="e#175#186#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="256">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="16" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/test_business.py">
+    <entry file="file://$PROJECT_DIR$/ui/data/case_login_data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-935">
-          <caret line="47" column="113" selection-start-line="47" selection-start-column="113" selection-end-line="47" selection-end-column="113" />
+        <state relative-caret-position="128">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/requests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/performance/performance_child_info_slave.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
           <folding>
-            <element signature="e#166#177#0" expanded="true" />
+            <element signature="e#173#184#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util/test_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="-199">
+          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/performance/performance_child_info_slave.py">
+    <entry file="file://D:/software/install/vs2017/Shared/Python36_64/Lib/site-packages/locustio-0.13.5-py3.6.egg/locust/clients.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+        <state relative-caret-position="-420">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/test_business.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
           <folding>
-            <element signature="e#173#184#0" expanded="true" />
+            <element signature="e#166#177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/performance/performance_child_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="58" column="28" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="28" />
+          <folding>
+            <element signature="e#175#186#0" expanded="true" />
           </folding>
         </state>
       </provider>
